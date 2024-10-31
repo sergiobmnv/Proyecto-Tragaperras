@@ -8,22 +8,22 @@ header {
     background-color: rgba(3, 3, 3, 0.375);
     display: flex;
     align-items: center;
-    height: 180px;
-    width: 100%;
+    height: 100px;
+    max-width: 97%;
     position: relative;
     padding: 0 20px; /* Espaciado interno */
 }
 
 /* Estilo para el párrafo centrado arriba */
-header .parrafo1 {
+header .parrafos .p1 {
     color: #ffd700;
     font-weight: bold;
     text-align: center;
     position: absolute;
-    top: 30px;
+    top: 5px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 25px;
+    font-size: 18px;
     font-family: cursive;
 
     text-shadow: 
@@ -33,15 +33,15 @@ header .parrafo1 {
 }
 
 /* Estilo para el segundo párrafo */
-header .parrafo2 {
+header .parrafos .p2{
     color: #ffd700;
     font-weight: bold;
     text-align: center;
-    position: relative;
+    position: absolute;
     top: 50px;
-    left: 50%;
+    left: 60%;
     transform: translateX(-60%);
-    font-size: 20px;
+    font-size: 13px;
 
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 0.5),
@@ -55,7 +55,7 @@ header .parrafo2 {
 }
 
 .logo img {
-    width: 150px; /* Ajusta el tamaño del logo */
+    width: 80px; /* Ajusta el tamaño del logo */
     height: auto;
     /* Efecto de sombra LED */
     filter: drop-shadow(0 0 8px rgba(238, 255, 2, 0.8)) 
@@ -73,8 +73,8 @@ header .parrafo2 {
 
 .botones {
     display: flex; /* Alinea los botones en una fila */
-    margin-left: 40%; /* Empuja los botones hacia la derecha */
-    position: relative;
+    margin-left: 80%; /* Empuja los botones hacia la derecha */
+    position: absolute;
     
 }
 
