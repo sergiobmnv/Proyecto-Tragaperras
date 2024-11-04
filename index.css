@@ -6,10 +6,10 @@ body {
 
 /* Estilo para el header */
 header {
-    background-color: rgba(3, 3, 3, 0.375);
+    background-color: rgba(3, 3, 3, 0.5);
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 120px;
     max-width: 97%;
     position: relative;
     padding: 0 20px; /* Espaciado interno */
@@ -98,11 +98,11 @@ header .titulo .p1 {
 /* Modo claro -- Oscuro*/
 .modo-oscuro {
     background-color: #121212; /* Color de fondo oscuro */
-    color: white; /* Color de texto en modo oscuro */
+    color: rgb(3, 3, 3); /* Color de texto en modo oscuro */
 }
 
 .modo-oscuro header {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo del encabezado en modo oscuro */
+    background-color: rgba(8, 8, 8, 0.97); /* Fondo del encabezado en modo oscuro */
 }
 
 .modo-oscuro .botones .btn {
@@ -121,7 +121,16 @@ header .titulo .p1 {
 
 .reloj {
     margin-left: 40px; /* Espacio entre el título y el reloj */
-    font-size: 20px; /* Tamaño de la fuente del reloj */
+    font-size: 25px; /* Tamaño de la fuente del reloj */
     font-weight: lighter; /* Peso de la fuente del reloj */
     color: rgba(255, 255, 1, 0.8);
+}
+
+marquee {
+    position: absolute; /* Posiciona el marquee de manera absoluta dentro del header */
+    bottom: 0; /* Coloca el marquee en la parte inferior del header */
+    width: 97%; /* Asegura que ocupe todo el ancho del header */
+    text-align: center; /* Centra el texto dentro del marquee */
+    font-size: 14px;
+    color: white;
 }
