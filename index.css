@@ -116,3 +116,12 @@ header .titulo .p1 {
 .modo-oscuro .botones .btn.retirar {
     background-color: #f44336; /* Color rojo para botón de retirar */
 }
+
+/* Reloj */
+
+.reloj {
+    margin-left: 40px; /* Espacio entre el título y el reloj */
+    font-size: 20px; /* Tamaño de la fuente del reloj */
+    font-weight: lighter; /* Peso de la fuente del reloj */
+    color: rgba(255, 255, 1, 0.8);
+}
