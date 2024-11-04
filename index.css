@@ -26,7 +26,6 @@ header .titulo .p1 {
     transform: translateX(-50%);
     font-size: 30px;
     font-family: cursive;
-
     text-shadow: 
         2px 2px 4px rgba(10, 10, 10, 0.8),
         -2px -2px 2px rgba(10, 10, 10, 0.8), 
@@ -51,7 +50,6 @@ header .titulo .p1 {
     display: flex; /* Alinea los botones en una fila */
     margin-left: 80%; /* Empuja los botones hacia la derecha */
     position: absolute;
-    
 }
 
 .botones .btn {
@@ -95,7 +93,18 @@ header .titulo .p1 {
     cursor: pointer;
 }
 
-/* Modo claro -- Oscuro*/
+/* Modo oscuro -- Posiciona el ícono en la parte inferior derecha del header */
+.modo-oscuro-claro {
+    position: fixed; /* Fija la posición del icono en la ventana */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    font-size: 24px; /* Tamaño del ícono */
+    color: rgb(255, 255, 255); /* Color del ícono */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    z-index: 1000; /* Asegura que esté al frente de otros elementos */
+}
+
+/* Modo claro -- Oscuro */
 .modo-oscuro {
     background-color: #121212; /* Color de fondo oscuro */
     color: rgb(3, 3, 3); /* Color de texto en modo oscuro */
@@ -106,7 +115,7 @@ header .titulo .p1 {
 }
 
 .modo-oscuro .botones .btn {
-    background-color: #333; /* Color de fondo de los botones en modo oscuro */
+    background-color: #33333300; /* Color de fondo de los botones en modo oscuro */
 }
 
 .modo-oscuro .botones .btn.depositar {
@@ -118,7 +127,6 @@ header .titulo .p1 {
 }
 
 /* Reloj */
-
 .reloj {
     margin-left: 40px; /* Espacio entre el título y el reloj */
     font-size: 25px; /* Tamaño de la fuente del reloj */
@@ -133,4 +141,80 @@ marquee {
     text-align: center; /* Centra el texto dentro del marquee */
     font-size: 14px;
     color: white;
+}
+
+/* Contenedor principal para organizar el tablero de combinaciones y el tablero de tragaperras */
+.tragaperras-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px auto;
+    max-width: 700px; /* Ajusta el ancho máximo del contenedor */
+    gap: 20px;
+}
+
+/* Tablero de combinaciones */
+.combinaciones {
+    width: 400px;
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.combinaciones h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffd700; /* Color dorado para el título */
+}
+
+.combinaciones ul {
+    list-style: none;
+    padding: 0;
+}
+
+.combinaciones li {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+/* Estilos para el tablero de 3x3 */
+.tableroSlot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 500px;
+    height: 400px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.celda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #222;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el GIF */
+.gifZeus {
+    width: 400px; /* Ajusta el ancho del contenedor del GIF */
+    height: 400px; /* Ajusta la altura del contenedor del GIF */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Esconde cualquier desbordamiento */
+}
+
+.gifZeus img {
+    width: 80%; /* Hace que el GIF ocupe todo el contenedor */
+    height: auto; /* Mantiene la proporción del GIF */
 }

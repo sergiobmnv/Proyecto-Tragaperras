@@ -5,7 +5,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Flosky Slots</title>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 
 </head>
 
@@ -28,6 +29,10 @@
         <button class="btn retirar">Retirar</button>
     </div>
         
+    <div class="modo-oscuro-claro">
+        <i id="modoIcono" class="fas fa-sun"></i>
+    </div>
+
     <div class="menuUsuario">
         <i class="fas fa-user user"></i>
     </div>
@@ -40,25 +45,32 @@
 
 <body>
 
-    <div class="modo-oscuro-claro">
-        <i id="modoIcono" class="fas fa-sun"></i>
-    </div>
-
-    <div class="infoSlot">
-        <p class="p1">Los simbolos pagan en cualquier posición.</p>
-        <p class="p2">Se debe juntar 9 simbolos para dar premio.</p>
-    </div>
-
-    <div class="conbinacionSimbolos">
-
-    </div>
-
-    <div class="tableroSlot">
-
-    </div>
-
-    <div class="gifZeus">
-
+    <div class="tragaperras-container">
+        <!-- Tablero de combinaciones -->
+        <div class="combinaciones">
+            <h2>Posibles Combinaciones</h2>
+            <ul>
+                <li>🐉 🐉 🐉 - 10 puntos</li>
+                <li>⚡ ⚡ ⚡ - 15 puntos</li>
+                <li>🪓 🪓 🪓 - 20 puntos</li>
+                <li>🌠 🌠 🌠 - 25 puntos</li>
+                <li>🦣 🦣 🦣 - 30 puntos</li>
+            </ul>
+        </div>
+        <div class="tableroSlot">
+            <div class="celda">🐉</div>
+            <div class="celda">⚡</div>
+            <div class="celda">🪓</div>
+            <div class="celda">🌠</div>
+            <div class="celda">🐉</div>
+            <div class="celda">🦣</div>
+            <div class="celda">🪓</div>
+            <div class="celda">🐉</div>
+            <div class="celda">🦣</div>
+        </div>
+        <div class="gifZeus">
+            <img src="Assert/Zeuf-2.gif" alt="Gif de Zeus" />
+        </div>
     </div>
 
     <div class="ajustes-info">

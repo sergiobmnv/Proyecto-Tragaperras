@@ -19,7 +19,6 @@ const modoIcono = document.getElementById('modoIcono');
 });
 
 /* Funcion Reloj */
-
 function actualizarReloj() {
     const ahora = new Date();
     const horas = String(ahora.getHours()).padStart(2, '0'); // Formato de 2 dígitos
