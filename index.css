@@ -1,6 +1,7 @@
 body {
     background-image: url(Assert/Fondo-Body.jpg);
     background-size: cover;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Estilo para el header */
@@ -15,7 +16,7 @@ header {
 }
 
 /* Estilo para el párrafo centrado arriba */
-header .parrafos .p1 {
+header .titulo .p1 {
     color: #ffd700;
     font-weight: bold;
     text-align: center;
@@ -23,29 +24,12 @@ header .parrafos .p1 {
     top: 5px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 18px;
+    font-size: 30px;
     font-family: cursive;
 
     text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.5),
-        -2px -2px 2px rgba(128, 9, 132, 0.8), 
-        2px -2px 2px rgba(238, 255, 0, 0.8); 
-}
-
-/* Estilo para el segundo párrafo */
-header .parrafos .p2{
-    color: #ffd700;
-    font-weight: bold;
-    text-align: center;
-    position: absolute;
-    top: 50px;
-    left: 60%;
-    transform: translateX(-60%);
-    font-size: 13px;
-
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.5),
-        -2px -2px 2px rgba(128, 9, 132, 0.8), 
+        2px 2px 4px rgba(10, 10, 10, 0.8),
+        -2px -2px 2px rgba(10, 10, 10, 0.8), 
         2px -2px 2px rgba(238, 255, 0, 0.8); 
 }
 
@@ -63,14 +47,6 @@ header .parrafos .p2{
     drop-shadow(0 0 20px rgba(4, 0, 6, 0.8));
 }
 
-.textos {
-    flex: 1; /* Permite que el bloque de texto ocupe el espacio restante */
-    display: flex; /* Habilita Flexbox para centrar los textos */
-    flex-direction: column; /* Coloca los textos en columna */
-    align-items: center; /* Centra los textos horizontalmente */
-    
-}
-
 .botones {
     display: flex; /* Alinea los botones en una fila */
     margin-left: 80%; /* Empuja los botones hacia la derecha */
@@ -78,13 +54,13 @@ header .parrafos .p2{
     
 }
 
-.btn {
-    padding: 10px 20px; /* Espaciado interno */
+.botones .btn {
+    padding: 5px 10px; /* Reducimos el espaciado interno */
     margin: 5px; /* Espacio entre los botones */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    font-size: 16px; /* Tamaño de fuente */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
 }
 
 .depositar {
@@ -103,4 +79,40 @@ header .parrafos .p2{
 
 .retirar:hover {
     background-color: #e53935; /* Color más oscuro al pasar el mouse */
+}
+
+/* Icono de usuario */
+.menuUsuario {
+    position: absolute;
+    right: 20px; /* Ajusta la posición hacia la derecha */
+    display: flex;
+    align-items: center;
+}
+
+.menuUsuario .user {
+    font-size: 40px; /* Tamaño del icono */
+    color: white; /* Color del icono */
+    cursor: pointer;
+}
+
+/* Modo claro -- Oscuro*/
+.modo-oscuro {
+    background-color: #121212; /* Color de fondo oscuro */
+    color: white; /* Color de texto en modo oscuro */
+}
+
+.modo-oscuro header {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo del encabezado en modo oscuro */
+}
+
+.modo-oscuro .botones .btn {
+    background-color: #333; /* Color de fondo de los botones en modo oscuro */
+}
+
+.modo-oscuro .botones .btn.depositar {
+    background-color: #4CAF50; /* Color verde para botón de depositar */
+}
+
+.modo-oscuro .botones .btn.retirar {
+    background-color: #f44336; /* Color rojo para botón de retirar */
 }
