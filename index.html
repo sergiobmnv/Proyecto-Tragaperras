@@ -25,7 +25,7 @@
     </div>
 
     <div class="botones">
-        <button class="btn depositar">Depositar</button>
+        <button class="btn depositar" id="depositarBtn">Depositar</button>
         <button class="btn retirar">Retirar</button>
     </div>
         
@@ -49,11 +49,11 @@
         <div class="combinaciones">
             <h2>Posibles Combinaciones</h2>
             <ul>
-                <li>🐉 🐉 🐉 - 10 puntos</li>
-                <li>⚡ ⚡ ⚡ - 15 puntos</li>
-                <li>🪓 🪓 🪓 - 20 puntos</li>
-                <li>🌠 🌠 🌠 - 25 puntos</li>
-                <li>🦣 🦣 🦣 - 30 puntos</li>
+                <li>🐉 🐉 🐉 - 10 Creditos</li>
+                <li>⚡ ⚡ ⚡ - 15 Creditos</li>
+                <li>🪓 🪓 🪓 - 20 Creditos</li>
+                <li>🌠 🌠 🌠 - 25 Creditos</li>
+                <li>🦣 🦣 🦣 - 30 Creditos</li>
             </ul>
         </div>
 
@@ -76,15 +76,48 @@
     </div>
 
     <div class="info-tablero">
-
-        <div class="volumen"></div>
-
-        <div class="ajuste"></div>
+        <!-- Control de volumen/música -->
+        <div class="volumen">
+            <i id="iconoMusica" class="fas fa-volume-up"></i>
+        </div>
+        
     
-        <div class="saldo-apuesta"></div>
+        <!-- Mostrar saldo -->
+        <div class="saldo-apuesta">
+            <p>Saldo: <span id="saldo">0</span> créditos</p>
+            <p>Apuesta: <span id="apuesta">10</span> créditos</p>
+        </div>
+    
+        <!-- Control para girar y cambiar la apuesta -->
+        <div class="girar-subir-bajar-apuesta">
+            <button id="bajarApuesta">-</button>
+            <button id="girarBtn">Girar</button>
+            <button id="subirApuesta">+</button>
+        </div>
+    </div>
 
-        <div class="girar-subir-bajar-apuesta"></div>
+    <!-- Modales -->
 
+    <!-- Ingresar -->
+    <div id="depositoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Depósito</h2>
+            <label for="cantidadDeposito">Ingresa la cantidad a depositar:</label>
+            <input type="number" id="cantidadDeposito" min="1" placeholder="Cantidad">
+            <button id="confirmarDeposito">Confirmar</button>
+        </div>
+    </div>
+
+    <!-- Retirar -->
+    <div id="retiroModal" class="modal">
+        <div class="modal-content">
+            <span class="close-retirar">&times;</span>
+            <h2>Retiro</h2>
+            <label for="cantidadRetiro">Ingresa la cantidad a retirar:</label>
+            <input type="number" id="cantidadRetiro" min="1" placeholder="Cantidad">
+            <button id="confirmarRetiro">Confirmar</button>
+        </div>
     </div>
 
     <script src='index.js'></script>
