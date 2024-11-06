@@ -3,7 +3,7 @@ body {
     background-size: cover;
     transition: filter 0.3s ease; /* Transición suave entre modos */
     height: 100%;
-    width: 98%;
+    max-width: 100%;
 }
 
 /* Estilo para el header */
@@ -12,7 +12,7 @@ header {
     display: flex;
     align-items: center;
     height: 120px;
-    max-width: 97%;
+    max-width: 99%;
     position: relative;
     padding: 0 20px; /* Espaciado interno */
 }
@@ -132,6 +132,7 @@ marquee {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
     
 }
 
@@ -177,8 +178,8 @@ marquee {
 
 /* Estilos para el GIF */
 .gifZeus {
-    width: 500px; /* Ajusta el ancho del contenedor del GIF */
-    height:600px; /* Ajusta la altura del contenedor del GIF */
+    width: 350px; /* Ajusta el ancho del contenedor del GIF */
+    height:350px; /* Ajusta la altura del contenedor del GIF */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,7 +188,7 @@ marquee {
 }
 
 .gifZeus img {
-    width: 80%; /* Hace que el GIF ocupe todo el contenedor */
+    width: 60%; /* Hace que el GIF ocupe todo el contenedor */
     height: auto; /* Mantiene la proporción del GIF */
 }
 
@@ -200,9 +201,8 @@ marquee {
     padding: 8px; /* Reducido el padding */
     margin-top: 15px; /* Reducido el margen superior */
     color: white;
-    width: 97%;
+    width: 99%;
     border-radius: 10px;
-    gap: 5px; /* Reducido el espacio entre secciones */
 }
 
 /* Agrupación del volumen y saldo */
