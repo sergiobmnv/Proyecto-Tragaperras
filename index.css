@@ -1,5 +1,5 @@
 body {
-    background-image: url(Assert/Fondo-Body.jpg);
+    background-image: url(assets/Fondo-Body.jpg);
     background-size: cover;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -91,39 +91,6 @@ header .titulo .p1 {
     font-size: 40px; /* Tamaño del icono */
     color: white; /* Color del icono */
     cursor: pointer;
-}
-
-/* Modo oscuro -- Posiciona el ícono en la parte inferior derecha del header */
-.modo-oscuro-claro {
-    position: fixed; /* Fija la posición del icono en la ventana */
-    top: 10px; /* Ajusta la distancia desde la parte superior */
-    right: 20px; /* Ajusta la distancia desde el borde derecho */
-    font-size: 24px; /* Tamaño del ícono */
-    color: rgb(255, 255, 255); /* Color del ícono */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    z-index: 1000; /* Asegura que esté al frente de otros elementos */
-}
-
-/* Modo claro -- Oscuro */
-.modo-oscuro {
-    background-color: #121212; /* Color de fondo oscuro */
-    color: rgb(3, 3, 3); /* Color de texto en modo oscuro */
-}
-
-.modo-oscuro header {
-    background-color: rgba(8, 8, 8, 0.97); /* Fondo del encabezado en modo oscuro */
-}
-
-.modo-oscuro .botones .btn {
-    background-color: #33333300; /* Color de fondo de los botones en modo oscuro */
-}
-
-.modo-oscuro .botones .btn.depositar {
-    background-color: #4CAF50; /* Color verde para botón de depositar */
-}
-
-.modo-oscuro .botones .btn.retirar {
-    background-color: #f44336; /* Color rojo para botón de retirar */
 }
 
 /* Reloj */

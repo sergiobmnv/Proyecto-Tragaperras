@@ -134,23 +134,7 @@ actualizarApuesta();
 
 /*--------------------------------------------------------------------------------------- */
 
-/* Funcion Modo Oscuro - Claro*/
-const modoIcono = document.getElementById('modoIcono');
-        const body = document.body;
-
-        modoIcono.addEventListener('click', () => {
-            // Alternar clase para el modo oscuro
-            body.classList.toggle('modo-oscuro');
-            
-            // Cambiar el icono
-            if (body.classList.contains('modo-oscuro')) {
-                modoIcono.classList.remove('fa-sun');
-                modoIcono.classList.add('fa-moon'); // Cambia a icono de luna
-            } else {
-                modoIcono.classList.remove('fa-moon');
-                modoIcono.classList.add('fa-sun'); // Cambia a icono de sol
-            }
-});
+    //Funcion para Daltonicos.
 
 /*--------------------------------------------------------------------------------------- */
 
@@ -167,5 +151,32 @@ function actualizarReloj() {
 // Llama a la función al cargar la página y cada segundo
 actualizarReloj(); // Inicializar el reloj
 setInterval(actualizarReloj, 1000); // Actualizar cada segundo
+
+/*--------------------------------------------------------------------------------------- */
+
+
+// Seleccionar el elemento de audio y la barra de volumen
+const musicaFondo = document.getElementById('musicaFondo');
+const controlVolumen = document.getElementById('controlVolumen');
+const iconoMusica = document.getElementById('iconoMusica');
+
+// Establecer el volumen inicial del audio según el valor inicial de la barra
+musicaFondo.volume = controlVolumen.value;
+
+// Escuchar los cambios en la barra de volumen
+controlVolumen.addEventListener('input', (event) => {
+    // Cambiar el volumen del audio según el valor de la barra de volumen
+    musicaFondo.volume = event.target.value;
+
+    // Cambiar el icono según el nivel de volumen
+    if (event.target.value == 0) {
+        iconoMusica.className = 'fas fa-volume-mute'; // Silencio
+    } else if (event.target.value < 0.5) {
+        iconoMusica.className = 'fas fa-volume-down'; // Volumen bajo
+    } else {
+        iconoMusica.className = 'fas fa-volume-up'; // Volumen alto
+    }
+});
+
 
 /*--------------------------------------------------------------------------------------- */
