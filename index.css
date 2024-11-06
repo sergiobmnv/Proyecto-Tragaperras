@@ -1,7 +1,9 @@
 body {
     background-image: url(assets/Fondo-Body.jpg);
     background-size: cover;
-    transition: background-color 0.3s, color 0.3s;
+    transition: filter 0.3s ease; /* Transición suave entre modos */
+    height: 100%;
+    width: 98%;
 }
 
 /* Estilo para el header */
@@ -116,18 +118,21 @@ marquee {
     justify-content: space-between;
     align-items: flex-start;
     margin: 50px auto;
-    max-width: 700px; /* Ajusta el ancho máximo del contenedor */
+    max-width: 100%; /* Ajusta el ancho máximo del contenedor */
+    height: 500px;
     gap: 20px;
 }
 
 /* Tablero de combinaciones */
 .combinaciones {
-    width: 400px;
+    width: 300px;
+    height: 200px;
     background-color: #222;
     color: #fff;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
 }
 
 .combinaciones h2 {
@@ -151,12 +156,12 @@ marquee {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
-    width: 500px;
+    gap: 20px;
+    width: 900px;
     height: 400px;
     background-color: #333;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 20px;
+    padding: 25px;
 }
 
 .celda {
@@ -172,8 +177,8 @@ marquee {
 
 /* Estilos para el GIF */
 .gifZeus {
-    width: 400px; /* Ajusta el ancho del contenedor del GIF */
-    height: 400px; /* Ajusta la altura del contenedor del GIF */
+    width: 500px; /* Ajusta el ancho del contenedor del GIF */
+    height:600px; /* Ajusta la altura del contenedor del GIF */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -399,3 +404,40 @@ input[type="number"]:focus {
 }
 
 
+/* Modo Daltonico*/
+/* Posiciona el botón en la parte derecha, debajo del header */
+.accesibilidad {
+    position: absolute;
+    top: 150px; /* Ajusta este valor según la altura del header */
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Estilo del botón */
+#iconoDaltonico {
+    width: 60px;
+    height: 60px;
+    background-color: #000000;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto visual en el botón al pasar el ratón */
+#iconoDaltonico:hover {
+    background-color: #f0f0f0;
+}
+
+/* Transición para el cambio de modo */
+body {
+    transition: filter 0.3s ease;
+}
+
+/* Filtro en modo daltónico */
+.modo-daltonico {
+    filter: grayscale(80%);
+}

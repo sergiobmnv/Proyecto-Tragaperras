@@ -69,11 +69,14 @@
             <img src="assets/Zeuf-2.gif" alt="Gif de Zeus" />
         </div>
 
+        <div class="accesibilidad">
+            <button id="iconoDaltonico">🦉</button>
+        </div>
     </div>
 
     <div class="info-tablero">
         <!-- Control de volumen/música -->
-        <audio id="musicaFondo" src="assets/ambiente.mp3" autoplay loop></audio>
+        <audio id="musicaFondo" src="assets/" autoplay loop></audio>
         <div class="volumen">
             <i id="iconoMusica" class="fas fa-volume-up"></i>
             <input type="range" id="controlVolumen" min="0" max="1" value="0.5" step="0.1"/>
@@ -117,6 +120,19 @@
             <button id="confirmarRetiro">Confirmar</button>
         </div>
     </div>
+
+    <!--Ejemplo de filtros SVG para protanopía, deuteranopía, y tritanopía--> 
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <filter id="filtroProtanopia">
+            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0, 0.558, 0.442, 0, 0, 0, 0, 0.242, 0.758, 0, 0, 0, 0, 0, 1, 0"></feColorMatrix>
+        </filter>
+        <filter id="filtroDeuteranopia">
+            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0, 0.7, 0.3, 0, 0, 0, 0, 0.3, 0.7, 0, 0, 0, 0, 0, 1, 0"></feColorMatrix>
+        </filter>
+        <filter id="filtroTritanopia">
+            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0, 0, 0.433, 0.567, 0, 0, 0, 0.475, 0.525, 0, 0, 0, 0, 0, 1, 0"></feColorMatrix>
+        </filter>
+    </svg>
 
     <script src='index.js'></script>
 </body>

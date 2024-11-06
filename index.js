@@ -135,6 +135,20 @@ actualizarApuesta();
 /*--------------------------------------------------------------------------------------- */
 
     //Funcion para Daltonicos.
+    const iconoDaltonico = document.getElementById('iconoDaltonico');
+        const body = document.body;
+
+        iconoDaltonico.addEventListener('click', () => {
+            // Alternar entre modo normal y modo daltónico
+            body.classList.toggle('modo-daltonico');
+
+            // Cambia el contenido del botón según el modo
+            if (body.classList.contains('modo-daltonico')) {
+                iconoDaltonico.textContent = "🌞"; // Icono para modo normal
+            } else {
+                iconoDaltonico.textContent = "🦉"; // Icono para modo daltónico
+            }
+        });
 
 /*--------------------------------------------------------------------------------------- */
 
