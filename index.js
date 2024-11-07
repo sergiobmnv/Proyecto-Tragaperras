@@ -237,9 +237,9 @@ var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("
 
     // Cambiar el color de fondo de los botones
     var botonesDepositar = document.getElementById("depositarBtn");
-    botonesDepositar.style.backgroundColor = document.body.classList.contains('blancoNegro') ? "grey" : "#4CAF50";  // Verde normal cuando no está en BN
+    botonesDepositar.style.backgroundColor = document.body.classList.contains('blancoNegro');  
     var botonRetirar = document.getElementById("retirarBtn");
-    botonRetirar.style.backgroundColor = document.body.classList.contains('blancoNegro') ? "grey" : "#f44336";  // Rojo normal cuando no está en BN
+    botonRetirar.style.backgroundColor = document.body.classList.contains('blancoNegro');  
 
     // Cambiar entre el modo blanco y negro y el modo normal
     document.body.classList.toggle('blancoNegro');
