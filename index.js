@@ -197,33 +197,6 @@ setInterval(actualizarReloj, 1000); // Actualizar cada segundo
 
 /*--------------------------------------------------------------------------------------- */
 
-
-// Seleccionar el elemento de audio y la barra de volumen
-const musicaFondo = document.getElementById('musicaFondo');
-const controlVolumen = document.getElementById('controlVolumen');
-const iconoMusica = document.getElementById('iconoMusica');
-
-// Establecer el volumen inicial del audio según el valor inicial de la barra
-musicaFondo.volume = controlVolumen.value;
-
-// Escuchar los cambios en la barra de volumen
-controlVolumen.addEventListener('input', (event) => {
-    // Cambiar el volumen del audio según el valor de la barra de volumen
-    musicaFondo.volume = event.target.value;
-
-    // Cambiar el icono según el nivel de volumen
-    if (event.target.value == 0) {
-        iconoMusica.className = 'fas fa-volume-mute'; // Silencio
-    } else if (event.target.value < 0.5) {
-        iconoMusica.className = 'fas fa-volume-down'; // Volumen bajo
-    } else {
-        iconoMusica.className = 'fas fa-volume-up'; // Volumen alto
-    }
-});
-
-
-/*--------------------------------------------------------------------------------------- */
-
    /* Evento Blanco y Negro */
 var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("click", function() {
     // Cambiar el fondo de la página (imagen)
@@ -255,4 +228,30 @@ var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("
         icono.classList.add('fas', 'fa-sun');
     }
 });
+
+/*--------------------------------------------------------------------------------------- */
+
+// Seleccionar el elemento de audio y la barra de volumen
+const musicaFondo = document.getElementById('musicaFondo');
+const controlVolumen = document.getElementById('controlVolumen');
+const iconoMusica = document.getElementById('iconoMusica');
+
+// Establecer el volumen inicial del audio según el valor inicial de la barra
+musicaFondo.volume = controlVolumen.value;
+
+// Escuchar los cambios en la barra de volumen
+controlVolumen.addEventListener('input', (event) => {
+    // Cambiar el volumen del audio según el valor de la barra de volumen
+    musicaFondo.volume = event.target.value;
+
+    // Cambiar el icono según el nivel de volumen
+    if (event.target.value == 0) {
+        iconoMusica.className = 'fas fa-volume-mute'; // Silencio
+    } else if (event.target.value < 0.5) {
+        iconoMusica.className = 'fas fa-volume-down'; // Volumen bajo
+    } else {
+        iconoMusica.className = 'fas fa-volume-up'; // Volumen alto
+    }
+});
+
 
