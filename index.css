@@ -1,6 +1,6 @@
 
 body {
-    background-image: url(assets/Fondo-Body.jpg);
+    background-image: url("assets/Fondo-Body.jpg");
     background-size: cover;
     background-position: center;
     transition: filter 0.3s ease;
@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 
 /* Estilo para el header */
@@ -19,9 +20,10 @@ header {
     align-items: center;
     width: 99%;
     height: 120px;
-    max-width: 99%;
+    max-width: 97%;
     position: relative;
     padding: 0 20px; /* Espaciado interno */
+
 }
 
 /* Estilo para el párrafo centrado arriba */
@@ -41,7 +43,7 @@ header .titulo .p1 {
         2px -2px 2px rgba(238, 255, 0, 0.8); 
 }
 
-/* Estilo para el logo alineado a la izquierda */
+
 .logo {
     margin-right: 20px; /* Espacio entre el logo y el texto */
 }
@@ -129,12 +131,13 @@ marquee {
     max-height: 80vh; /* Limitar el alto máximo */
     box-sizing: border-box;
     padding: 10px;
+    
 }
 
 /* Tablero de combinaciones */
 .combinaciones {
     width: 15%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,12 +146,13 @@ marquee {
     color: #fff;
     padding: 15px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgb(255, 0, 191);
     text-align: center;
+
 }
 
 .combinaciones h2 {
-    font-size: 1.2rem;
+    font-size: 18px;
     margin-bottom: 10px;
     color: #ffd700; /* Color dorado para el título */
 }
@@ -160,7 +164,7 @@ marquee {
 
 .combinaciones li {
     margin: 8px 0;
-    font-size: 1rem;
+    font-size: 20px;
 }
 
 /* Estilos para el tablero de 3x3 */
@@ -175,6 +179,7 @@ marquee {
     border-radius: 20px;
     padding: 25px;
     box-sizing: border-box;
+    box-shadow: 0 4px 18px rgb(255, 0, 191);
 }
 
 .celda {
@@ -185,26 +190,27 @@ marquee {
     background-color: #222;
     color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos para el GIF */
 .gifZeus {
-    width: 10%;
+    width: 12%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 18px rgb(0, 187, 255);
 }
 
 .gifZeus img {
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
-/* Contenedor de la información del tablero */
+/*Contenedor de la información del tablero*/
 .info-tablero {
     display: flex;
     justify-content: space-around;
@@ -419,7 +425,7 @@ input[type="number"]:focus {
 /* Animación para el giro */
 @keyframes girar {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); } /*Hace girar las celdas tambien*/
+    /* 50% { transform: rotate(360deg); } /*Hace girar las celdas tambien*/
 }
 
 .tableroSlot {

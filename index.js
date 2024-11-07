@@ -223,3 +223,20 @@ controlVolumen.addEventListener('input', (event) => {
 
 
 /*--------------------------------------------------------------------------------------- */
+
+    /*Evento Blanco y Negro */
+
+    var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("click", function(){
+        
+        //Cambiar el Background
+        document.body.style.backgroundImage = "url('assets/Fondo-Body-modified.jpg')";
+
+        //Cambiar botones.
+        var botonesDepositar  = document.getElementById("depositarBtn");
+        botonesDepositar.style.backgroundColor = "grey";
+        var botonRetirar  = document.getElementById("retirarBtn");
+        botonRetirar.style.backgroundColor = "grey";
+
+        //Cambiar Textos.
+
+    });
