@@ -1,9 +1,15 @@
+
 body {
     background-image: url(assets/Fondo-Body.jpg);
     background-size: cover;
-    transition: filter 0.3s ease; /* Transición suave entre modos */
-    height: 100%;
-    max-width: 100%;
+    background-position: center;
+    transition: filter 0.3s ease;
+    height: 100vh; /* Ajustar a la altura de la ventana */
+    overflow: hidden; /* Eliminar el scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilo para el header */
@@ -11,6 +17,7 @@ header {
     background-color: rgba(3, 3, 3, 0.5);
     display: flex;
     align-items: center;
+    width: 99%;
     height: 120px;
     max-width: 99%;
     position: relative;
@@ -116,24 +123,28 @@ marquee {
 .tragaperras-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin: 50px auto;
-    max-width: 100%; /* Ajusta el ancho máximo del contenedor */
-    height: 500px;
-    gap: 20px;
+    align-items: center;
+    width: 95%; /* Ajustar el ancho */
+    height: 60%; /* Ocupa el 80% de la altura de la ventana */
+    max-height: 80vh; /* Limitar el alto máximo */
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 /* Tablero de combinaciones */
 .combinaciones {
-    width: 300px;
-    height: 200px;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     background-color: #222;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
-    
 }
 
 .combinaciones h2 {
@@ -158,11 +169,12 @@ marquee {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
-    width: 900px;
-    height: 400px;
+    width: 60%;
+    height: 100%;
     background-color: #333;
     border-radius: 20px;
     padding: 25px;
+    box-sizing: border-box;
 }
 
 .celda {
@@ -178,18 +190,18 @@ marquee {
 
 /* Estilos para el GIF */
 .gifZeus {
-    width: 350px; /* Ajusta el ancho del contenedor del GIF */
-    height:350px; /* Ajusta la altura del contenedor del GIF */
+    width: 10%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px; /* Bordes redondeados */
-    overflow: hidden; /* Esconde cualquier desbordamiento */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .gifZeus img {
-    width: 60%; /* Hace que el GIF ocupe todo el contenedor */
-    height: auto; /* Mantiene la proporción del GIF */
+    width: 100%;
+    height: auto;
 }
 
 /* Contenedor de la información del tablero */
@@ -198,11 +210,12 @@ marquee {
     justify-content: space-around;
     align-items: center;
     background-color: #222;
-    padding: 8px; /* Reducido el padding */
-    margin-top: 15px; /* Reducido el margen superior */
+    padding: 8px;
+    margin-top: 15px;
     color: white;
-    width: 99%;
+    width: 95%;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 /* Agrupación del volumen y saldo */
@@ -403,41 +416,19 @@ input[type="number"]:focus {
     color: #b30000; /* Color de texto oscuro para etiquetas */
 }
 
-
-/* Modo Daltonico*/
-/* Posiciona el botón en la parte derecha, debajo del header */
-.accesibilidad {
-    position: absolute;
-    top: 150px; /* Ajusta este valor según la altura del header */
-    right: 20px;
-    z-index: 1000;
+/* Animación para el giro */
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* Estilo del botón */
-#iconoDaltonico {
-    width: 60px;
-    height: 60px;
-    background-color: #000000;
-    border: none;
-    color: #333;
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.tableroSlot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    transition: transform 1s ease-in-out;
 }
 
-/* Efecto visual en el botón al pasar el ratón */
-#iconoDaltonico:hover {
-    background-color: #f0f0f0;
-}
-
-/* Transición para el cambio de modo */
-body {
-    transition: filter 0.3s ease;
-}
-
-/* Filtro en modo daltónico */
-.modo-daltonico {
-    filter: grayscale(80%);
+.tableroSlot.girar {
+    animation: girar 2s linear; /* La duración de la animación es de 2 segundos */
 }

@@ -134,21 +134,50 @@ actualizarApuesta();
 
 /*--------------------------------------------------------------------------------------- */
 
-    //Funcion para Daltonicos.
-    const iconoDaltonico = document.getElementById('iconoDaltonico');
-        const body = document.body;
+    //Funcion Boton Girar.
+    
+    document.getElementById("girarBtn").addEventListener("click", function() {
+        // Primero comprobamos si hay saldo suficiente
+        if (saldo >= apuesta) {
+            // Descontamos la apuesta del saldo
+            saldo -= apuesta;
+            actualizarSaldo(); // Actualizamos el saldo en pantalla
 
-        iconoDaltonico.addEventListener('click', () => {
-            // Alternar entre modo normal y modo daltónico
-            body.classList.toggle('modo-daltonico');
+            // Realizamos la animación de giro
+            girarCeldas();
 
-            // Cambia el contenido del botón según el modo
-            if (body.classList.contains('modo-daltonico')) {
-                iconoDaltonico.textContent = "🌞"; // Icono para modo normal
-            } else {
-                iconoDaltonico.textContent = "🦉"; // Icono para modo daltónico
-            }
-        });
+            // Se puede añadir más lógica aquí si quieres verificar combinaciones ganadoras
+            // Por ejemplo, puedes comparar las celdas después de un giro y sumar créditos al saldo.
+        } else {
+            alert("No tienes suficientes créditos para girar.");
+        }
+    });
+
+    // Función para hacer girar las celdas
+    function girarCeldas() {
+        const celdas = document.querySelectorAll(".celda");
+        const emojis = ["🐉", "⚡", "🪓", "🌠", "🦣"]; // Lista de símbolos para el juego
+
+        // Agregar la animación de giro a las celdas
+        document.querySelector(".tableroSlot").classList.add("girar");
+
+        // Crear una función que cambia los símbolos aleatorios
+        let interval = setInterval(function() {
+            celdas.forEach(celda => {
+                let randomIndex = Math.floor(Math.random() * emojis.length);
+                celda.textContent = emojis[randomIndex];
+            });
+        }, 100); // Cambiar de símbolo cada 100ms para simular el giro
+
+        // Después de 2 segundos, detener la animación y mostrar los resultados finales
+        setTimeout(function() {
+            clearInterval(interval); // Detener el intervalo
+            // Aquí puedes agregar la lógica de verificar si el jugador ha ganado
+
+            // Eliminar la clase de animación de giro
+            document.querySelector(".tableroSlot").classList.remove("girar");
+        }, 2000); // Duración del giro (2 segundos en este caso)
+    }
 
 /*--------------------------------------------------------------------------------------- */
 
