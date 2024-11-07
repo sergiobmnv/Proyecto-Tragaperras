@@ -438,3 +438,37 @@ input[type="number"]:focus {
 .tableroSlot.girar {
     animation: girar 2s linear; /* La duración de la animación es de 2 segundos */
 }
+
+/*-------------------------------------------------------------------------------------------*/
+
+/* Modo Blanco y Negro */
+body.blancoNegro {
+    filter: grayscale(100%);
+    background-image: url('assets/Fondo-Body.jpg');
+    
+}
+
+/* Estilos para el botón */
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+button:hover {
+    color: #f39c12;
+}
+
+/* Estilo para el icono del botón */
+#botonBlancoNegro {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botonBlancoNegro .fa-sun, #botonBlancoNegro .fa-moon {
+    color: #ffd700; /* Color dorado */
+}
