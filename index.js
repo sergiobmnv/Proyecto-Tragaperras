@@ -236,7 +236,7 @@ const musicaFondo = document.getElementById('musicaFondo');
 const controlVolumen = document.getElementById('controlVolumen');
 const iconoMusica = document.getElementById('iconoMusica');
 
-// Establecer el volumen inicial del audio según el valor inicial de la barra
+// Establecer el volumen inicial del audio
 musicaFondo.volume = controlVolumen.value;
 
 // Escuchar los cambios en la barra de volumen
@@ -253,5 +253,6 @@ controlVolumen.addEventListener('input', (event) => {
         iconoMusica.className = 'fas fa-volume-up'; // Volumen alto
     }
 });
+
 
 

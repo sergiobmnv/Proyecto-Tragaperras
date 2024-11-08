@@ -425,7 +425,7 @@ input[type="number"]:focus {
 /* Animación para el giro */
 @keyframes girar {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); } /*Hace girar las celdas tambien*/
+    /*100% { transform: rotate(360deg); } /*Hace girar las celdas tambien*/
 }
 
 .tableroSlot {
