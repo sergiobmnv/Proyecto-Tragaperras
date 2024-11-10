@@ -100,7 +100,6 @@ confirmarRetiroBtn.addEventListener('click', () => {
 // Inicializar el saldo en pantalla
 actualizarSaldo();
 
-
 /*--------------------------------------------------------------------------------------- */
 
 // Inicializa la apuesta en 10 créditos
@@ -134,50 +133,101 @@ actualizarApuesta();
 
 /*--------------------------------------------------------------------------------------- */
 
-    //Funcion Boton Girar.
-    
-    document.getElementById("girarBtn").addEventListener("click", function() {
-        // Primero comprobamos si hay saldo suficiente
+    // Función del botón "Girar" con comprobación de saldo
+    girarBtn.addEventListener("click", function() {
         if (saldo >= apuesta) {
-            // Descontamos la apuesta del saldo
+            // Saldo suficiente: Descontamos la apuesta y giramos
             saldo -= apuesta;
-            actualizarSaldo(); // Actualizamos el saldo en pantalla
-
-            // Realizamos la animación de giro
+            actualizarSaldo();
+    
+            // Quitamos el mensaje de saldo insuficiente
+            girarBtn.classList.remove("insufficient");
+            girarBtn.removeAttribute("data-tooltip");
+    
+            
             girarCeldas();
-
-            // Se puede añadir más lógica aquí si quieres verificar combinaciones ganadoras
-            // Por ejemplo, puedes comparar las celdas después de un giro y sumar créditos al saldo.
+    
+            // Aquí se podría añadir la lógica de verificación de combinaciones ganadoras
         } else {
-            alert("No tienes suficientes créditos para girar.");
+            // Saldo insuficiente: mostrar mensaje al hacer hover
+            girarBtn.classList.add("insufficient");
+            girarBtn.setAttribute("data-tooltip", "Saldo insuficiente");
         }
     });
 
     // Función para hacer girar las celdas
-    function girarCeldas() {
-        const celdas = document.querySelectorAll(".celda");
-        const emojis = ["🐉", "⚡", "🪓", "🌠", "🦣"]; // Lista de símbolos para el juego
+function girarCeldas() {
+    const celdas = document.querySelectorAll(".celda");
+    const emojis = ["🐉", "⚡", "🪓", "🌠", "🦣"]; // Lista de símbolos para el juego
 
-        // Agregar la animación de giro a las celdas
-        document.querySelector(".tableroSlot").classList.add("girar");
+    // Agregar la animación de giro a las celdas
+    document.querySelector(".tableroSlot").classList.add("girar");
 
-        // Crear una función que cambia los símbolos aleatorios
-        let interval = setInterval(function() {
-            celdas.forEach(celda => {
-                let randomIndex = Math.floor(Math.random() * emojis.length);
-                celda.textContent = emojis[randomIndex];
-            });
-        }, 100); // Cambiar de símbolo cada 100ms para simular el giro
+    // Crear una función que cambia los símbolos aleatorios
+    let interval = setInterval(function() {
+        celdas.forEach(celda => {
+            let randomIndex = Math.floor(Math.random() * emojis.length);
+            celda.textContent = emojis[randomIndex];
+        });
+    }, 100); // Cambiar de símbolo cada 100ms para simular el giro
 
-        // Después de 2 segundos, detener la animación y mostrar los resultados finales
-        setTimeout(function() {
-            clearInterval(interval); // Detener el intervalo
-            // Aquí puedes agregar la lógica de verificar si el jugador ha ganado
+    // Después de 2 segundos, detener la animación y mostrar los resultados finales
+    setTimeout(function() {
+        clearInterval(interval); // Detener el intervalo
+        // Eliminar la clase de animación de giro
+        document.querySelector(".tableroSlot").classList.remove("girar");
+    }, 2000); // Duración del giro (2 segundos en este caso)
+}
 
-            // Eliminar la clase de animación de giro
-            document.querySelector(".tableroSlot").classList.remove("girar");
-        }, 2000); // Duración del giro (2 segundos en este caso)
+// Función para verificar las combinaciones ganadoras
+function verificarCombinaciones() {
+    const celdas = document.querySelectorAll(".celda");
+    const combinaciones = {
+        "🐉🐉🐉": 10,
+        "⚡⚡⚡": 15,
+        "🪓🪓🪓": 20,
+        "🌠🌠🌠": 25,
+        "🦣🦣🦣": 30
+    };
+
+    let resultado = "";
+    let ganador = false;
+    
+    // Comprobamos las combinaciones horizontales (filas)
+    for (let i = 0; i < celdas.length; i += 3) {
+        const combinacion = `${celdas[i].textContent}${celdas[i+1].textContent}${celdas[i+2].textContent}`;
+        if (combinaciones[combinacion]) {
+            resultado = `¡Has ganado ${combinaciones[combinacion]} créditos!`;
+            ganador = true;
+            saldo += combinaciones[combinacion]; // Añadir los créditos ganados al saldo
+            actualizarSaldo(); // Actualizar el saldo en pantalla
+            break;
+        }
     }
+
+    // Mostrar el mensaje de ganancia o pérdida
+    if (ganador) {
+        document.getElementById('mensajeGanador').textContent = resultado;
+        document.getElementById('mensajeGanador').style.display = 'block';
+    } else {
+        document.getElementById('mensajeGanador').textContent = "¡No has ganado esta vez!";
+        document.getElementById('mensajeGanador').style.display = 'block';
+    }
+
+    // Ocultar el mensaje después de 3 segundos
+    setTimeout(() => {
+        document.getElementById('mensajeGanador').style.display = 'none';
+    }, 3000);
+}
+
+// Función para actualizar el saldo
+function actualizarSaldo() {
+    saldoElemento.textContent = saldo; // Actualiza el contenido del saldo
+}
+
+// Asegúrate de inicializar el saldo en pantalla
+actualizarSaldo();
+
 
 /*--------------------------------------------------------------------------------------- */
 

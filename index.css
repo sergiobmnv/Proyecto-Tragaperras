@@ -472,3 +472,32 @@ button:hover {
 #botonBlancoNegro .fa-sun, #botonBlancoNegro .fa-moon {
     color: #ffd700; /* Color dorado */
 }
+
+/* Estilo para el mensaje de saldo insuficiente en el botón "Girar" */
+#girarBtn[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4500;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+#girarBtn.insufficient {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+#mensajeGanador {
+    font-size: 1.2em;
+    color: #FFD700; /* Color dorado */
+    text-align: center;
+    margin-bottom: 10px;
+    display: none; /* Se controla en JavaScript */
+}
