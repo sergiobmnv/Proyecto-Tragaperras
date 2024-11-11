@@ -198,12 +198,12 @@ marquee {
 
 /* Estilos para el GIF */
 .gifZeus {
-    width: 12%;
-    height: 100%;
+    width: 15%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgb(0, 187, 255);
 }
