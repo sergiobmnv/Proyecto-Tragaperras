@@ -179,47 +179,6 @@ function girarCeldas() {
     }, 2000); // Duración del giro (2 segundos en este caso)
 }
 
-// Función para verificar las combinaciones ganadoras
-function verificarCombinaciones() {
-    const celdas = document.querySelectorAll(".celda");
-    const combinaciones = {
-        "🐉🐉🐉": 10,
-        "⚡⚡⚡": 15,
-        "🪓🪓🪓": 20,
-        "🌠🌠🌠": 25,
-        "🦣🦣🦣": 30
-    };
-
-    let resultado = "";
-    let ganador = false;
-    
-    // Comprobamos las combinaciones horizontales (filas)
-    for (let i = 0; i < celdas.length; i += 3) {
-        const combinacion = `${celdas[i].textContent}${celdas[i+1].textContent}${celdas[i+2].textContent}`;
-        if (combinaciones[combinacion]) {
-            resultado = `¡Has ganado ${combinaciones[combinacion]} créditos!`;
-            ganador = true;
-            saldo += combinaciones[combinacion]; // Añadir los créditos ganados al saldo
-            actualizarSaldo(); // Actualizar el saldo en pantalla
-            break;
-        }
-    }
-
-    // Mostrar el mensaje de ganancia o pérdida
-    if (ganador) {
-        document.getElementById('mensajeGanador').textContent = resultado;
-        document.getElementById('mensajeGanador').style.display = 'block';
-    } else {
-        document.getElementById('mensajeGanador').textContent = "¡No has ganado esta vez!";
-        document.getElementById('mensajeGanador').style.display = 'block';
-    }
-
-    // Ocultar el mensaje después de 3 segundos
-    setTimeout(() => {
-        document.getElementById('mensajeGanador').style.display = 'none';
-    }, 3000);
-}
-
 // Función para actualizar el saldo
 function actualizarSaldo() {
     saldoElemento.textContent = saldo; // Actualiza el contenido del saldo
@@ -241,9 +200,9 @@ function actualizarReloj() {
     document.getElementById('horaActual').textContent = tiempo; // Actualizar el contenido del reloj
 }
 
-// Llama a la función al cargar la página y cada segundo
-actualizarReloj(); // Inicializar el reloj
-setInterval(actualizarReloj, 1000); // Actualizar cada segundo
+    // Llama a la función al cargar la página y cada segundo
+    actualizarReloj(); // Inicializar el reloj
+    setInterval(actualizarReloj, 1000); // Actualizar cada segundo
 
 /*--------------------------------------------------------------------------------------- */
 
