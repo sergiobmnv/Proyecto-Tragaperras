@@ -13,7 +13,10 @@ i18next.init({
                 combinaciones:
                     "Combinaciones",
                 creditos:
-                    "Creditos"
+                    "Creditos",
+                botonCambiarIdioma:
+                    "Cambiar Idioma",
+                
             }
         }, 
         en:{
@@ -27,7 +30,10 @@ i18next.init({
                 combinaciones:
                     "Combinations",
                 creditos:
-                    "Credits"
+                    "Credits",
+                botonCambiarIdioma:
+                    "Change Language",
+                
             }
         },
     }
@@ -46,7 +52,12 @@ function traducir() {
         document.getElementById("retirarBtn").innerHTML = t ('retirar');
         document.getElementById("Posiblescombinaciones").innerHTML = t('combinaciones');
         document.getElementById("creditos").innerHTML = t ('creditos');
-
+        document.getElementById("creditos1").innerHTML = t ('creditos');
+        document.getElementById("creditos2").innerHTML = t ('creditos');
+        document.getElementById("creditos3").innerHTML = t ('creditos');
+        document.getElementById("creditos4").innerHTML = t ('creditos');
+        document.getElementById("evento").innerHTML = t ('botonCambiarIdioma');
+        
     });
 
 }
