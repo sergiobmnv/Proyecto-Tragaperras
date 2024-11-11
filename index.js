@@ -61,10 +61,9 @@ confirmarDepositoBtn.addEventListener('click', () => {
     
     // Validación para asegurar que se ingrese una cantidad válida
     if (isNaN(cantidadDeposito) || cantidadDeposito <= 0) {
-        alert("Por favor, ingresa una cantidad válida.");
+        mostrarMensaje("Por favor, ingresa una cantidad válida.");
         return;
     }
-    
     saldo += cantidadDeposito; // Actualizar saldo
     actualizarSaldo(); // Actualizar en pantalla
 
@@ -79,13 +78,11 @@ confirmarRetiroBtn.addEventListener('click', () => {
     
     // Validación para asegurar que se ingrese una cantidad válida
     if (isNaN(cantidadRetiro) || cantidadRetiro <= 0) {
-        alert("Por favor, ingresa una cantidad válida.");
+        mostrarMensaje("Por favor, ingresa una cantidad válida.");
         return;
     }
-    
-    // Verificar si hay suficiente saldo para retirar
     if (cantidadRetiro > saldo) {
-        alert("No tienes suficiente saldo para retirar esa cantidad.");
+        mostrarMensaje("No tienes suficiente saldo para retirar esa cantidad.");
         return;
     }
 
@@ -264,4 +261,17 @@ controlVolumen.addEventListener('input', (event) => {
 });
 
 
+/*Mensaje error retirar*/
+
+function mostrarMensaje(texto, color = '#ff4d4d') {
+    const mensajeElemento = document.getElementById('mensaje');
+    mensajeElemento.textContent = texto;
+    mensajeElemento.style.backgroundColor = color; // Cambia el color si es necesario
+    mensajeElemento.classList.add('mostrar');
+    
+    // Ocultar el mensaje después de 3 segundos
+    setTimeout(() => {
+        mensajeElemento.classList.remove('mostrar');
+    }, 3000);
+}
 

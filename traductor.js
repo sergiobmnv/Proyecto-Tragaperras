@@ -39,25 +39,28 @@ i18next.init({
     }
 });
 
-
-
-
 function traducir() {
     const nuevoIdioma = i18next.language === 'es' ? 'en' : 'es';
 
-    //Funcion changeLanguage 
-    i18next.changeLanguage (nuevoIdioma, function(err, t){
-        document.getElementById("+18").innerHTML = t('responsabilidad');
-        document.getElementById("depositarBtn").innerHTML = t ('depositar');
-        document.getElementById("retirarBtn").innerHTML = t ('retirar');
-        document.getElementById("Posiblescombinaciones").innerHTML = t('combinaciones');
-        document.getElementById("creditos").innerHTML = t ('creditos');
-        document.getElementById("creditos1").innerHTML = t ('creditos');
-        document.getElementById("creditos2").innerHTML = t ('creditos');
-        document.getElementById("creditos3").innerHTML = t ('creditos');
-        document.getElementById("creditos4").innerHTML = t ('creditos');
-        document.getElementById("evento").innerHTML = t ('botonCambiarIdioma');
+    i18next.changeLanguage(nuevoIdioma, function(err, t) {
         
-    });
+        document.getElementById("+18").innerHTML = t('responsabilidad');
+        document.getElementById("depositarBtn").innerHTML = t('depositar');
+        document.getElementById("retirarBtn").innerHTML = t('retirar');
+        document.getElementById("Posiblescombinaciones").innerHTML = t('combinaciones');
+        document.getElementById("creditos").innerHTML = t('creditos');
+        document.getElementById("creditos1").innerHTML = t('creditos');
+        document.getElementById("creditos2").innerHTML = t('creditos');
+        document.getElementById("creditos3").innerHTML = t('creditos');
+        document.getElementById("creditos4").innerHTML = t('creditos');
+        document.getElementById("evento").innerHTML = `${t('botonCambiarIdioma')} <span class="bandera"></span>`;
 
+        // Alternar la bandera
+        const bandera = document.querySelector('.bandera');
+        if (nuevoIdioma === 'en') {
+            bandera.classList.add('bandera-inglesa');
+        } else {
+            bandera.classList.remove('bandera-inglesa');
+        }
+    });
 }

@@ -28,6 +28,9 @@
         <button class="btn retirar" id="retirarBtn">Retirar</button>
     </div>
 
+    <div id="mensaje" class="mensaje"></div>
+
+
     <div class="menuUsuario">
         <i class="fas fa-user user"></i>
     </div>
@@ -79,8 +82,12 @@
         </div>
 
         <div class="cambiar-idioma">
-            <button id="evento" onclick="traducir()">Cambiar Idioma</button>
+            <button id="evento" onclick="traducir()">
+                Cambiar Idioma
+                <span class="bandera"></span>
+            </button>
         </div>
+        
         <div class="ajustes">
             <button id="botonBlancoNegro">
                 <i id="iconoModo" class="fas fa-sun"></i>
