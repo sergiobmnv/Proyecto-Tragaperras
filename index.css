@@ -562,3 +562,7 @@ button:hover {
     display: block;
     opacity: 1;
 }
+
+.celda img, .combinaciones ul li img {
+    width: 30px; /* ajusta el tamaño según lo necesario */
+}

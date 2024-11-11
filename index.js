@@ -152,37 +152,51 @@ actualizarApuesta();
         }
     });
 
+
     // Función para hacer girar las celdas
-function girarCeldas() {
-    const celdas = document.querySelectorAll(".celda");
-    const emojis = ["🐉", "⚡", "🪓", "🌠", "🦣"]; // Lista de símbolos para el juego
 
-    // Agregar la animación de giro a las celdas
-    document.querySelector(".tableroSlot").classList.add("girar");
+    const simbolos = [
+        "assets/Dragon-icono.png",
+        "assets/trueno-icono.png",
+        "assets/espadas.png",
+        "assets/zeus-icono.png",
+        "assets/bufalo.png"
+    ];
 
-    // Crear una función que cambia los símbolos aleatorios
-    let interval = setInterval(function() {
-        celdas.forEach(celda => {
-            let randomIndex = Math.floor(Math.random() * emojis.length);
-            celda.textContent = emojis[randomIndex];
-        });
-    }, 100); // Cambiar de símbolo cada 100ms para simular el giro
-
-    // Después de 2 segundos, detener la animación y mostrar los resultados finales
-    setTimeout(function() {
-        clearInterval(interval); // Detener el intervalo
-        // Eliminar la clase de animación de giro
-        document.querySelector(".tableroSlot").classList.remove("girar");
-    }, 2000); // Duración del giro (2 segundos en este caso)
-}
-
-// Función para actualizar el saldo
-function actualizarSaldo() {
-    saldoElemento.textContent = saldo; // Actualiza el contenido del saldo
-}
-
-// Asegúrate de inicializar el saldo en pantalla
-actualizarSaldo();
+    function girarCeldas() {
+        const celdas = document.querySelectorAll(".celda");
+    
+        // Agregar la animación de giro a las celdas
+        document.querySelector(".tableroSlot").classList.add("girar");
+    
+        // Crear una función que cambia los símbolos aleatorios
+        let interval = setInterval(function() {
+            celdas.forEach(celda => {
+                let randomIndex = Math.floor(Math.random() * simbolos.length);
+                let imgSrc = simbolos[randomIndex];
+    
+                // Limpia el contenido de la celda
+                celda.innerHTML = "";
+    
+                // Crear un nuevo elemento de imagen
+                let img = document.createElement("img");
+                img.src = imgSrc;
+                img.style.width = "20%"; // Ajusta el tamaño si es necesario
+    
+                // Agregar la imagen a la celda
+                celda.appendChild(img);
+            });
+        }, 100); // Cambiar de símbolo cada 100ms para simular el giro
+    
+        // Después de 2 segundos, detener la animación y mostrar los resultados finales
+        setTimeout(function() {
+            clearInterval(interval); // Detener el intervalo
+            document.querySelector(".tableroSlot").classList.remove("girar");
+        }, 2000); // Duración del giro (2 segundos en este caso)
+    }
+    
+    // Inicializar el saldo en pantalla (si tienes una función para ello)
+    actualizarSaldo();
 
 
 /*--------------------------------------------------------------------------------------- */
