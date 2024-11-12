@@ -1,6 +1,4 @@
 
-/*--------------------------------------------------------------------------------------- */
-
 // Variables de saldo y elementos del DOM
 let saldo = 0; // Saldo inicial
 const saldoElemento = document.getElementById('saldo');
@@ -280,7 +278,6 @@ controlVolumen.addEventListener('input', (event) => {
 
 
 /*Mensaje error retirar*/
-
 function mostrarMensaje(texto, color = '#ff4d4d') {
     const mensajeElemento = document.getElementById('mensaje');
     mensajeElemento.textContent = texto;
