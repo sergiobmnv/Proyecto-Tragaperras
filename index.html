@@ -128,7 +128,7 @@
         <div class="saldo">
             <p id="saldoSaldo">Saldo:</p> <span id="saldo">0</span> <p id="creditoSaldo">créditos</p>
         </div>
-        
+
         <div class="apuesta">
             <p id="apuestaTraductor">Apuesta:</p> <span id="apuesta">10</span> <p id="creditoTraductos">créditos</p>
         </div>
@@ -162,6 +162,15 @@
             <label for="cantidadRetiro">Ingresa la cantidad a retirar:</label>
             <input type="number" id="cantidadRetiro" min="1" placeholder="Cantidad">
             <button id="confirmarRetiro">Confirmar</button>
+        </div>
+    </div>
+
+    <!-- Modal Para dar Premio en las combinaciones -->
+    <div id="ganadorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>¡Felicidades, has ganado!</h2>
+            <p>¡Has logrado una combinación ganadora!</p>
         </div>
     </div>
 

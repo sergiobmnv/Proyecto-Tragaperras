@@ -290,3 +290,39 @@ function mostrarMensaje(texto, color = '#ff4d4d') {
     }, 3000);
 }
 
+/*FUNCIONALIDAD PARA COMPROBAR LAS CELDAS Y QUE DE PREMIO*/
+function comprobarGanador() {
+    const celdas = Array.from(document.querySelectorAll('.tableroSlot .celda img'));
+
+    // Combinaciones ganadoras
+    const combinacionesGanadoras = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // filas
+        [0, 4, 8], [6, 4, 2], // diagonales
+        [3, 4, 8], [3, 4, 2]  // L's
+    ];
+
+    // Comprobar cada combinación ganadora
+    for (let combinacion of combinacionesGanadoras) {
+        const [a, b, c] = combinacion;
+
+        if (celdas[a].src && celdas[a].src === celdas[b].src && celdas[a].src === celdas[c].src) {
+            // Marcar celdas ganadoras en verde
+            [a, b, c].forEach(i => celdas[i].style.borderColor = 'green');
+
+            // Mostrar modal de victoria
+            mostrarModalGanador();
+            return true;
+        }
+    }
+    return false; // No hay combinación ganadora
+}
+
+// Función para mostrar el modal de victoria
+function mostrarModalGanador() {
+    document.getElementById('ganadorModal').style.display = 'block';
+}
+
+// Función para cerrar el modal de victoria
+function cerrarModal() {
+    document.getElementById('ganadorModal').style.display = 'none';
+}
