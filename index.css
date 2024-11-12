@@ -223,6 +223,7 @@ marquee {
     margin-top: 15px;
     color: white;
     width: 95%;
+    height: 120px;
     border-radius: 10px;
     box-sizing: border-box;
 }
@@ -241,11 +242,19 @@ marquee {
     color: #ffffff;
 }
 
-/* Texto de saldo y apuesta, compacto */
-.saldo-apuesta {
-    font-size: 1.1em;
-    text-align: left;
-    line-height: 1.2; /* Compacto el espacio entre líneas */
+
+/* Contenedor para organizar saldo arriba de apuesta */
+.container {
+    display: flex;
+    flex-direction: column; /* Coloca los div en columna */
+    gap: 10px; /* Espacio entre saldo y apuesta */
+}
+
+/* Alineación horizontal de los elementos dentro de cada div */
+.saldo, .apuesta {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre cada elemento interno */
 }
 
 /* Contenedor de botones para apuesta y girar */
@@ -563,6 +572,8 @@ button:hover {
     opacity: 1;
 }
 
+
+    /*Imagenes de las celdas.*/
 .celda img, .combinaciones ul li img {
     width: 30px; /* ajusta el tamaño según lo necesario */
 }

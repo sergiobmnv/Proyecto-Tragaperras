@@ -16,6 +16,17 @@ i18next.init({
                     "Creditos",
                 botonCambiarIdioma:
                     "Cambiar Idioma",
+                saldoSaldo:
+                    "Saldo",
+                creditoSaldo:
+                    "Creditos",
+                apuestaTraductor:
+                    "Apuesta",
+                creditoTraductos:
+                    "Creditos",
+                girarBtn:
+                    "Girar",
+
                 
             }
         }, 
@@ -33,6 +44,16 @@ i18next.init({
                     "Credits",
                 botonCambiarIdioma:
                     "Change Language",
+                saldoSaldo:
+                    "Balance:",
+                creditoSaldo:
+                    "Credits",
+                apuestaTraductor:
+                    "Bet:",
+                creditoTraductos:
+                    "Credits",
+                girarBtn:
+                    "Spin",
                 
             }
         },
@@ -54,6 +75,11 @@ function traducir() {
         document.getElementById("creditos3").innerHTML = t('creditos');
         document.getElementById("creditos4").innerHTML = t('creditos');
         document.getElementById("evento").innerHTML = `${t('botonCambiarIdioma')} <span class="bandera"></span>`;
+        document.getElementById("saldoSaldo").innerHTML = t('saldoSaldo');
+        document.getElementById("creditoSaldo").innerHTML = t('creditoSaldo');
+        document.getElementById("apuestaTraductor").innerHTML = t('apuestaTraductor');
+        document.getElementById("creditoTraductos").innerHTML = t('creditoTraductos');
+        document.getElementById("girarBtn").innerHTML = t('girarBtn');
 
         // Alternar la bandera
         const bandera = document.querySelector('.bandera');
