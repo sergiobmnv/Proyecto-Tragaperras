@@ -154,7 +154,6 @@ actualizarApuesta();
 
 
     // Función para hacer girar las celdas
-
     const simbolos = [
         "assets/Dragon-icono.png",
         "assets/trueno-icono.png",
@@ -166,8 +165,10 @@ actualizarApuesta();
     function girarCeldas() {
         const celdas = document.querySelectorAll(".celda");
     
-        // Agregar la animación de giro a las celdas
-        document.querySelector(".tableroSlot").classList.add("girar");
+        // Agrega una clase de animación a cada celda
+        celdas.forEach(celda => {
+            celda.classList.add("animando");
+         });
     
         // Crear una función que cambia los símbolos aleatorios
         let interval = setInterval(function() {
@@ -191,7 +192,10 @@ actualizarApuesta();
         // Después de 2 segundos, detener la animación y mostrar los resultados finales
         setTimeout(function() {
             clearInterval(interval); // Detener el intervalo
-            document.querySelector(".tableroSlot").classList.remove("girar");
+            // Remover la clase de animación de las celdas para detener el efecto de movimiento
+        celdas.forEach(celda => {
+            celda.classList.remove("animando");
+        });
         }, 2000); // Duración del giro (2 segundos en este caso)
     }
     

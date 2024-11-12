@@ -4,13 +4,12 @@ body {
     background-size: cover;
     background-position: center;
     transition: filter 0.3s ease;
-    height: 100vh; /* Ajustar a la altura de la ventana */
-    overflow: hidden; /* Eliminar el scroll */
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
 
 /* Estilo para el header */
@@ -26,8 +25,7 @@ header {
 
 }
 
-/* Estilo para el párrafo centrado arriba */
-header .titulo .p1 {
+.titulo .p1 {
     color: #ffd700;
     font-weight: bold;
     text-align: center;
@@ -37,17 +35,13 @@ header .titulo .p1 {
     transform: translateX(-50%);
     font-size: 30px;
     font-family: cursive;
-    text-shadow: 
-        2px 2px 4px rgba(10, 10, 10, 0.8),
-        -2px -2px 2px rgba(10, 10, 10, 0.8), 
-        2px -2px 2px rgba(238, 255, 0, 0.8); 
+    text-shadow: 2px 2px 4px rgba(10, 10, 10, 0.8),
+                 -2px -2px 2px rgba(10, 10, 10, 0.8), 
+                 2px -2px 2px rgba(238, 255, 0, 0.8); 
 }
 
-
-.logo {
-    margin-right: 20px; /* Espacio entre el logo y el texto */
-}
-
+/*----------------------------------------------------------------------------------------------------*/
+/*ESTILO PARA EL LOGO*/
 .logo img {
     width: 80px; /* Ajusta el tamaño del logo */
     height: auto;
@@ -57,6 +51,12 @@ header .titulo .p1 {
     drop-shadow(0 0 20px rgba(4, 0, 6, 0.8));
 }
 
+.logo {
+    margin-right: 20px; /* Espacio entre el logo y el texto */
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*BOTONES PARA RETIRAR Y DEPOSITAR.*/
 .botones {
     display: flex; /* Alinea los botones en una fila */
     margin-left: 80%; /* Empuja los botones hacia la derecha */
@@ -89,8 +89,10 @@ header .titulo .p1 {
 .retirar:hover {
     background-color: #e53935; /* Color más oscuro al pasar el mouse */
 }
+/*----------------------------------------------------------------------------------------------------*/
 
-/* Icono de usuario */
+
+/* ICONO DEL USUARIO */
 .menuUsuario {
     position: absolute;
     right: 20px; /* Ajusta la posición hacia la derecha */
@@ -104,6 +106,7 @@ header .titulo .p1 {
     cursor: pointer;
 }
 
+/*----------------------------------------------------------------------------------------------------*/
 /* Reloj */
 .reloj {
     margin-left: 40px; /* Espacio entre el título y el reloj */
@@ -112,6 +115,8 @@ header .titulo .p1 {
     color: rgba(255, 255, 1, 0.8);
 }
 
+/*----------------------------------------------------------------------------------------------------*/
+/*MENSAJE: JUEGA CON RESPONSABILIDAD +18*/
 marquee {
     position: absolute; /* Posiciona el marquee de manera absoluta dentro del header */
     bottom: 0; /* Coloca el marquee en la parte inferior del header */
@@ -120,6 +125,8 @@ marquee {
     font-size: 14px;
     color: white;
 }
+
+/*----------------------------------------------------------------------------------------------------*/
 
 /* Contenedor principal para organizar el tablero de combinaciones y el tablero de tragaperras */
 .tragaperras-container {
@@ -133,6 +140,8 @@ marquee {
     padding: 10px;
     
 }
+
+/*----------------------------------------------------------------------------------------------------*/
 
 /* Tablero de combinaciones */
 .combinaciones {
@@ -170,6 +179,8 @@ marquee {
     gap: 20px;
 }
 
+/*----------------------------------------------------------------------------------------------------*/
+
 /* Estilos para el tablero de 3x3 */
 .tableroSlot {
     display: grid;
@@ -196,6 +207,8 @@ marquee {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
 }
 
+
+/*----------------------------------------------------------------------------------------------------*/
 /* Estilos para el GIF */
 .gifZeus {
     width: 15%;
@@ -212,7 +225,11 @@ marquee {
     width: 90%;
     height: auto;
 }
+/*----------------------------------------------------------------------------------------------------*/
 
+
+
+/*----------------------------------------------------------------------------------------------------*/
 /*Contenedor de la información del tablero*/
 .info-tablero {
     display: flex;
@@ -227,6 +244,7 @@ marquee {
     border-radius: 10px;
     box-sizing: border-box;
 }
+/*----------------------------------------------------------------------------------------------------*/
 
 /* Agrupación del volumen y saldo */
 .volumen-saldo {
@@ -242,6 +260,41 @@ marquee {
     color: #ffffff;
 }
 
+
+/*----------------------------------------------------------------------------------------------------*/
+/* Modo Blanco y Negro */
+body.blancoNegro {
+    filter: grayscale(100%);
+    background-image: url('assets/Fondo-Body.jpg');
+    
+}
+
+/* Estilos para el botón */
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+button:hover {
+    color: #f39c12;
+}
+
+/* Estilo para el icono del botón */
+#botonBlancoNegro {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botonBlancoNegro .fa-sun, #botonBlancoNegro .fa-moon {
+    color: #ffd700; /* Color dorado */
+}
+
+/*----------------------------------------------------------------------------------------------------*/
 
 /* Contenedor para organizar saldo arriba de apuesta */
 .container {
@@ -306,8 +359,10 @@ marquee {
 .girar-subir-bajar-apuesta #girarBtn.large {
     --girar-size: 65px;
 }
+/*----------------------------------------------------------------------------------------------------*/
 
-/* Estilos generales para los modales */
+/*----------------------------------------------------------------------------------------------------*/
+/* ESTILOS GENERALES PARA LOS MODALES*/
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
@@ -332,17 +387,22 @@ marquee {
     animation: slideIn 0.5s; /* Animación al abrir */
 }
 
-/* Animación de entrada */
-@keyframes slideIn {
-    from {
-        transform: translateY(-50%);
-        opacity: 0;
-    }
-    to {
+/*-------------------------------------------------------------------------------------------*/
+/*Hacer la animacion de la slots de manera que se mueva para abajo*/
+/* Define la animación de desplazamiento vertical */
+@keyframes spin {
+    0% {
         transform: translateY(0);
-        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
     }
 }
+/* Cuando .animando esté activo, aplica el efecto de desplazamiento */
+.celda.animando img {
+    animation: spin 0.2s linear infinite;
+}
+/*-------------------------------------------------------------------------------------------*/
 
 /* Estilo del botón de cerrar */
 .close {
@@ -433,57 +493,7 @@ input[type="number"]:focus {
 #retiroModal label {
     color: #b30000; /* Color de texto oscuro para etiquetas */
 }
-
-/* Animación para el giro */
-@keyframes girar {
-    0% { transform: rotate(0deg); }
-    /*100% { transform: rotate(360deg); } /*Hace girar las celdas tambien*/
-}
-
-.tableroSlot {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    transition: transform 1s ease-in-out;
-}
-
-.tableroSlot.girar {
-    animation: girar 2s linear; /* La duración de la animación es de 2 segundos */
-}
-
 /*-------------------------------------------------------------------------------------------*/
-
-/* Modo Blanco y Negro */
-body.blancoNegro {
-    filter: grayscale(100%);
-    background-image: url('assets/Fondo-Body.jpg');
-    
-}
-
-/* Estilos para el botón */
-button {
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-}
-
-button:hover {
-    color: #f39c12;
-}
-
-/* Estilo para el icono del botón */
-#botonBlancoNegro {
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#botonBlancoNegro .fa-sun, #botonBlancoNegro .fa-moon {
-    color: #ffd700; /* Color dorado */
-}
 
 /* Estilo para el mensaje de saldo insuficiente en el botón "Girar" */
 #girarBtn[data-tooltip]:hover::after {
@@ -515,7 +525,6 @@ button:hover {
 }
 
 /* Estilo general para el boton, cambiar idioma*/
-
 /* Estilo general del contenedor */
 .cambiar-idioma {
     display: flex;
@@ -571,7 +580,6 @@ button:hover {
     display: block;
     opacity: 1;
 }
-
 
     /*Imagenes de las celdas.*/
 .celda img, .combinaciones ul li img {
