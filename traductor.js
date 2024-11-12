@@ -26,8 +26,6 @@ i18next.init({
                     "Creditos",
                 girarBtn:
                     "Girar",
-
-                
             }
         }, 
         en:{
@@ -54,7 +52,6 @@ i18next.init({
                     "Credits",
                 girarBtn:
                     "Spin",
-                
             }
         },
     }
