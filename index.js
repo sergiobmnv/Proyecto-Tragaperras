@@ -291,38 +291,101 @@ function mostrarMensaje(texto, color = '#ff4d4d') {
 }
 
 /*FUNCIONALIDAD PARA COMPROBAR LAS CELDAS Y QUE DE PREMIO*/
-function comprobarGanador() {
-    const celdas = Array.from(document.querySelectorAll('.tableroSlot .celda img'));
+// Elementos del modal de premio
+const premioModal = document.getElementById('premioModal');
+const premioMensaje = document.getElementById('premioMensaje');
+const closePremioBtn = document.querySelector('.close-premio');
 
-    // Combinaciones ganadoras
-    const combinacionesGanadoras = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], // filas
-        [0, 4, 8], [6, 4, 2], // diagonales
-        [3, 4, 8], [3, 4, 2]  // L's
-    ];
+// Función para mostrar el modal de premio
+function mostrarPremio(mensaje) {
+    premioMensaje.textContent = mensaje;
+    premioModal.style.display = 'block';
+}
 
-    // Comprobar cada combinación ganadora
-    for (let combinacion of combinacionesGanadoras) {
-        const [a, b, c] = combinacion;
+// Cerrar el modal de premio al hacer clic en la 'X'
+closePremioBtn.addEventListener('click', () => {
+    premioModal.style.display = 'none';
+});
 
-        if (celdas[a].src && celdas[a].src === celdas[b].src && celdas[a].src === celdas[c].src) {
-            // Marcar celdas ganadoras en verde
-            [a, b, c].forEach(i => celdas[i].style.borderColor = 'green');
-
-            // Mostrar modal de victoria
-            mostrarModalGanador();
-            return true;
-        }
+// Cerrar el modal de premio al hacer clic fuera del modal
+window.addEventListener('click', (event) => {
+    if (event.target === premioModal) {
+        premioModal.style.display = 'none';
     }
-    return false; // No hay combinación ganadora
+});
+
+// Función para verificar combinaciones ganadoras
+function verificarGanancia() {
+    const celdas = document.querySelectorAll('.celda');
+    const simbolosActuales = Array.from(celdas).map(celda => celda.querySelector('img').src);
+    
+    // Definimos todas las combinaciones ganadoras
+    const combinacionesGanadoras = [
+        // Horizontales
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        
+        // Verticales
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        
+        // Diagonales
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+    
+    // Variable para determinar si el jugador ganó
+    let gano = false;
+
+    // Recorre cada combinación ganadora para verificar si hay coincidencia
+    combinacionesGanadoras.forEach(combinacion => {
+        const [a, b, c] = combinacion;
+        
+        // Verifica si los tres símbolos en la combinación son iguales
+        if (simbolosActuales[a] === simbolosActuales[b] && simbolosActuales[b] === simbolosActuales[c]) {
+            // Agrega clase 'ganadora' para resaltar las celdas ganadoras
+            celdas[a].classList.add('ganadora');
+            celdas[b].classList.add('ganadora');
+            celdas[c].classList.add('ganadora');
+            
+            // Actualizar saldo y mostrar modal de premio solo si hay ganancia
+            mostrarPremio('¡Has ganado 100 créditos!');
+            saldo += 100; // Asigna el premio
+            actualizarSaldo();
+            gano = true;
+        }
+    });
+
+    // Si no hubo ganancia, remover cualquier borde verde previo
+    if (!gano) {
+        celdas.forEach(celda => celda.classList.remove('ganadora'));
+    }
 }
 
-// Función para mostrar el modal de victoria
-function mostrarModalGanador() {
-    document.getElementById('ganadorModal').style.display = 'block';
-}
 
-// Función para cerrar el modal de victoria
-function cerrarModal() {
-    document.getElementById('ganadorModal').style.display = 'none';
+function girarCeldas() {
+    const celdas = document.querySelectorAll(".celda");
+    celdas.forEach(celda => celda.classList.add("animando"));
+
+    let interval = setInterval(function() {
+        celdas.forEach(celda => {
+            let randomIndex = Math.floor(Math.random() * simbolos.length);
+            let imgSrc = simbolos[randomIndex];
+            celda.innerHTML = "";
+            let img = document.createElement("img");
+            img.src = imgSrc;
+            img.style.width = "20%";
+            celda.appendChild(img);
+        });
+    }, 100);
+
+    setTimeout(function() {
+        clearInterval(interval);
+        celdas.forEach(celda => celda.classList.remove("animando"));
+        
+        // Llama a la función de verificación después del giro
+        verificarGanancia();
+    }, 2000);
 }
