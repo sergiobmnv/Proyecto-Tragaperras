@@ -587,49 +587,35 @@ input[type="number"]:focus {
 }
 
 
-/*ESTILOS PARA EL MODAL DE DAR PREMIO*/
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.close-premio {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-premio:hover, .close-premio:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.celda.ganadora {
-    border: 2px solid green;
-}
-
 /*---------------------------------------------------------------------------------------------*/
-/*Estilos para la informacion de convinaciones:*/
-/* Botón de información */
-    /* Estilos para el modal */
+        /*Estilos para la informacion de convinaciones*/
+/*Estilos para el boton de informacion*/
+.info-button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: #0056b3;
+}
+
+.info-button:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
+}
+
+/* Estilos para el modal */
 .modal-info {
     position: fixed;
     top: 50%;
@@ -716,32 +702,43 @@ input[type="number"]:focus {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -1; /* Detrás del modal */
 }
-
-
 /*-------------------------------------------------------------------------------------*/
-/*Estilos para el boton de informacion*/
-.info-button {
-    font-size: 20px;
+
+/*ESTILOS PARA EL MODAL DE DAR PREMIO*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close-premio {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
     font-weight: bold;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.close-premio:hover, .close-premio:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.info-button:hover {
-    background-color: #0056b3;
+.celda.ganadora {
+    border: 2px solid green;
 }
-
-.info-button:focus {
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
-}
-

@@ -320,23 +320,7 @@ const premioModal = document.getElementById('premioModal');
 const premioMensaje = document.getElementById('premioMensaje');
 const closePremioBtn = document.querySelector('.close-premio');
 
-// Función para mostrar el modal de premio
-function mostrarPremio(mensaje) {
-    premioMensaje.textContent = mensaje;
-    premioModal.style.display = 'block';
-}
 
-// Cerrar el modal de premio al hacer clic en la 'X'
-closePremioBtn.addEventListener('click', () => {
-    premioModal.style.display = 'none';
-});
-
-// Cerrar el modal de premio al hacer clic fuera del modal
-window.addEventListener('click', (event) => {
-    if (event.target === premioModal) {
-        premioModal.style.display = 'none';
-    }
-});
 
 /*------------------------------------------------------------------------------------------*/
 // Función para verificar combinaciones ganadoras
@@ -387,7 +371,7 @@ function verificarGanancia() {
     // Recorre cada combinación ganadora para verificar si hay coincidencia
     combinacionesGanadoras.forEach(combinacion => {
         const [a, b, c] = combinacion;
-        
+    
         // Verifica si los tres símbolos en la combinación son iguales
         if (simbolosActuales[a] === simbolosActuales[b] && simbolosActuales[b] === simbolosActuales[c]) {
             // Agrega clase 'ganadora' para resaltar las celdas ganadoras
@@ -396,31 +380,181 @@ function verificarGanancia() {
             celdas[c].classList.add('ganadora');
 
             if (a == 0 && b ==1 && c == 2) {
-                
-            } else if (a == 3 && b == 5 && c == 6) {
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
+            } else if (a == 3 && b == 4 && c == 5) {
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             } else if (a == 6 && b == 7 && c == 8){
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             } else if (a == 0 && b == 4 && c == 8) {
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             }else if (a == 2 && b == 4 && c == 6) {
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             }else if (a == 3 && b == 4 && c == 8) {
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             }else if (a == 3 && b == 4 && c == 2) {
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             }else if (a == 0 && b == 1 && c == 5) {
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             }else if (a == 6 && b == 7 && c == 5) {
-                
+                if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
+                    mostrarPremio('¡Has ganado 10 créditos!');
+                    saldo += 10; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                    mostrarPremio('¡Has ganado 15 créditos!');
+                    saldo += 15; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                    mostrarPremio('¡Has ganado 20 créditos!');
+                    saldo += 20; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                    mostrarPremio('¡Has ganado 25 créditos!');
+                    saldo += 25; // Asigna el premio
+                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                    mostrarPremio('¡Has ganado 30 créditos!');
+                    saldo += 30; // Asigna el premio
+                }
             }
             
             // Mostrar el premio al usuario
-            mostrarPremio('¡Has ganado 100 créditos!');
-            saldo += 100; // Asigna el premio
             actualizarSaldo();
             gano = true;
         }
+        // Función para mostrar el modal de premio
+    function mostrarPremio(mensaje) {
+        premioMensaje.textContent = mensaje;
+        premioModal.style.display = 'block';
+    }
+
+    // Cerrar el modal de premio al hacer clic en la 'X'
+    closePremioBtn.addEventListener('click', () => {
+        premioModal.style.display = 'none';
+    });
+
+    // Cerrar el modal de premio al hacer clic fuera del modal
+    window.addEventListener('click', (event) => {
+        if (event.target === premioModal) {
+            premioModal.style.display = 'none';
+        }
+    });
     });
 
     // Si no hubo ganancia, remover cualquier borde verde previo
@@ -460,7 +594,6 @@ function girarCeldas() {
         verificarGanancia();
     }, 2000);
 }
-
 
 /*-------------------------------------------------------------------------------------------*/
 //Modal para mostrar la informacion de las combinaciones.
