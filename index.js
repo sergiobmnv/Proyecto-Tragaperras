@@ -460,3 +460,14 @@ function girarCeldas() {
         verificarGanancia();
     }, 2000);
 }
+
+
+/*-------------------------------------------------------------------------------------------*/
+//Modal para mostrar la informacion de las combinaciones.
+// Mostrar el modal cuando se necesita
+document.querySelector('.modal-info').classList.add('show');
+
+// Cerrar el modal al hacer clic en la 'X'
+document.querySelector('.close-info').addEventListener('click', function() {
+    document.querySelector('.modal-info').classList.remove('show');
+});

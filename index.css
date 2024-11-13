@@ -629,93 +629,94 @@ input[type="number"]:focus {
 /*---------------------------------------------------------------------------------------------*/
 /*Estilos para la informacion de convinaciones:*/
 /* Botón de información */
-/* Estilos generales del modal */
-.modal {
-    display: none;
+    /* Estilos para el modal */
+.modal-info {
     position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
-    overflow-y: auto; /* Permite desplazamiento si es necesario */
-}
-
-/* Contenedor de contenido del modal */
-.modal-content {
-    background-color: #333; /* Fondo oscuro para el modal */
-    color: white; /* Texto blanco para contraste */
-    margin: 10% auto; /* Centrado vertical y horizontal */
-    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.801);
     border-radius: 10px;
-    width: 90%; /* Ajustable para el ancho */
-    max-width: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para darle relieve */
-    font-family: Arial, sans-serif;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 1000;
+    display: none; /* Para ocultarlo inicialmente */
 }
 
-/* Título del modal */
-.modal-content h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #FFD700; /* Color dorado */
-}
-
-/* Botón de cerrar modal */
+/* Estilo para la 'X' de cierre */
 .close-info {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    color: #aaa;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
     cursor: pointer;
-    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .close-info:hover {
-    color: #ff4444;
+    color: #ff0000; /* Rojo al pasar el ratón */
 }
 
-/* Estilos para la lista de combinaciones */
-.modal-content ul {
-    list-style: none; /* Quita los puntos de la lista */
+/* Estilos para el título */
+.modal-info h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos para la lista */
+.modal-info ul {
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre las combinaciones */
 }
 
-.modal-content ul li {
+/* Estilos para cada ítem de la lista */
+.modal-info li {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: 1em;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo para cada fila */
-    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    
 }
 
-/* Estilos para los íconos e información dentro de cada combinación */
-.modal-content ul li img {
-    width: 40px; /* Tamaño del icono */
+/* Estilo para las imágenes dentro de la lista */
+.modal-info li img {
+    width: 30px;
     height: auto;
-    margin-right: 10px; /* Espacio entre imagen y texto */
+    margin-left: 15px;
 }
 
-.modal-content ul li p {
-    margin: 0 5px;
+/* Estilo al pasar el ratón sobre cada ítem de la lista */
+.modal-info li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
 
-.modal-content ul li #creditos,
-.modal-content ul li #creditos2,
-.modal-content ul li #creditos3,
-.modal-content ul li #creditos4 {
-    font-size: 0.9em;
-    color: #FFD700; /* Color dorado */
+/* Estilos para la modal cuando esté visible */
+.modal-info.show {
+    display: block; /* Se muestra cuando se añade la clase 'show' */
 }
+
+/* Fondo oscuro para el resto de la pantalla cuando el modal está visible */
+.modal-info::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; /* Detrás del modal */
+}
+
 
 /*-------------------------------------------------------------------------------------*/
 /*Estilos para el boton de informacion*/

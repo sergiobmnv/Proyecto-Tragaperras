@@ -17,11 +17,11 @@ i18next.init({
                 botonCambiarIdioma:
                     "Cambiar Idioma",
                 saldoSaldo:
-                    "Saldo",
+                    "Saldo:",
                 creditoSaldo:
                     "Creditos",
                 apuestaTraductor:
-                    "Apuesta",
+                    "Apuesta:",
                 creditoTraductos:
                     "Creditos",
                 girarBtn:
