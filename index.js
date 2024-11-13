@@ -224,9 +224,6 @@ window.addEventListener('click', (event) => {
         infoModal.style.display = 'none';
     }
 });
-
-
-
 /*--------------------------------------------------------------------------------------- */
 
 /* Funcion Reloj */
@@ -302,7 +299,7 @@ controlVolumen.addEventListener('input', (event) => {
     }
 });
 
-
+/*------------------------------------------------------------------------------------------*/
 /*Mensaje error retirar*/
 function mostrarMensaje(texto, color = '#ff4d4d') {
     const mensajeElemento = document.getElementById('mensaje');
@@ -316,6 +313,7 @@ function mostrarMensaje(texto, color = '#ff4d4d') {
     }, 3000);
 }
 
+/*------------------------------------------------------------------------------------------*/
 /*FUNCIONALIDAD PARA COMPROBAR LAS CELDAS Y QUE DE PREMIO*/
 // Elementos del modal de premio
 const premioModal = document.getElementById('premioModal');
@@ -340,11 +338,31 @@ window.addEventListener('click', (event) => {
     }
 });
 
+/*------------------------------------------------------------------------------------------*/
+// Función para verificar combinaciones ganadoras
+// Lista de imágenes de símbolos
+const combinaciones = [
+    'assets/Dragon-icono.png',  
+    'assets/trueno-icono.png',   
+    'assets/espadas.png',  
+    'assets/zeus-icono.png', 
+    'assets/bufalo.png'    
+];
+
+// Premios asociados a las imágenes
+const premios = {
+    'assets/Dragon-icono.png': 10,
+    'assets/trueno-icono.png': 15,
+    'assets/espadas.png': 20,
+    'assets/zeus-icono.png': 25,
+    'assets/bufalo.png': 30
+};
+
 // Función para verificar combinaciones ganadoras
 function verificarGanancia() {
     const celdas = document.querySelectorAll('.celda');
     const simbolosActuales = Array.from(celdas).map(celda => celda.querySelector('img').src);
-    
+
     // Definimos todas las combinaciones ganadoras
     const combinacionesGanadoras = [
         // Horizontales
@@ -354,9 +372,15 @@ function verificarGanancia() {
         
         // Diagonales
         [0, 4, 8],
-        [2, 4, 6]
+        [2, 4, 6],
+
+        //Verticales
+        [3, 4, 8],
+        [3, 4, 2],
+        [0, 1, 5],
+        [6, 7, 5]
     ];
-    
+
     // Variable para determinar si el jugador ganó
     let gano = false;
 
@@ -370,8 +394,28 @@ function verificarGanancia() {
             celdas[a].classList.add('ganadora');
             celdas[b].classList.add('ganadora');
             celdas[c].classList.add('ganadora');
+
+            if (a == 0 && b ==1 && c == 2) {
+                
+            } else if (a == 3 && b == 5 && c == 6) {
+                
+            } else if (a == 6 && b == 7 && c == 8){
+                
+            } else if (a == 0 && b == 4 && c == 8) {
+                
+            }else if (a == 2 && b == 4 && c == 6) {
+                
+            }else if (a == 3 && b == 4 && c == 8) {
+                
+            }else if (a == 3 && b == 4 && c == 2) {
+                
+            }else if (a == 0 && b == 1 && c == 5) {
+                
+            }else if (a == 6 && b == 7 && c == 5) {
+                
+            }
             
-            // Actualizar saldo y mostrar modal de premio solo si hay ganancia
+            // Mostrar el premio al usuario
             mostrarPremio('¡Has ganado 100 créditos!');
             saldo += 100; // Asigna el premio
             actualizarSaldo();
@@ -385,7 +429,13 @@ function verificarGanancia() {
     }
 }
 
+// Función para mostrar el premio en la interfaz
+function mostrarPremio(mensaje) {
+    const resultado = document.getElementById('resultado');
+    resultado.textContent = mensaje;
+}
 
+// Función para girar las celdas
 function girarCeldas() {
     const celdas = document.querySelectorAll(".celda");
     celdas.forEach(celda => celda.classList.add("animando"));
@@ -394,10 +444,10 @@ function girarCeldas() {
         celdas.forEach(celda => {
             let randomIndex = Math.floor(Math.random() * simbolos.length);
             let imgSrc = simbolos[randomIndex];
-            celda.innerHTML = "";
+            celda.innerHTML = ""; // Limpiar la celda
             let img = document.createElement("img");
             img.src = imgSrc;
-            img.style.width = "20%";
+            img.style.width = "20%";  // Ajustar el tamaño de la imagen
             celda.appendChild(img);
         });
     }, 100);
@@ -406,7 +456,7 @@ function girarCeldas() {
         clearInterval(interval);
         celdas.forEach(celda => celda.classList.remove("animando"));
         
-        // Llama a la función de verificación después del giro
+        // Verifica la ganancia después de que el giro termine
         verificarGanancia();
     }, 2000);
 }
