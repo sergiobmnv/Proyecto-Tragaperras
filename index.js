@@ -98,7 +98,7 @@ actualizarSaldo();
 /*--------------------------------------------------------------------------------------- */
 
 // Inicializa la apuesta en 10 créditos
-let apuesta = 10;
+let apuesta = 20;
 
 // Selecciona el elemento donde se mostrará la apuesta
 const apuestaDisplay = document.getElementById('apuesta');
@@ -116,9 +116,9 @@ document.getElementById('subirApuesta').addEventListener('click', function() {
 
 // Botón de disminuir la apuesta
 document.getElementById('bajarApuesta').addEventListener('click', function() {
-    if (apuesta > 10) { // Asegúrate de que la apuesta no baje de 10
-        apuesta -= 10; // Disminuye la apuesta 
-        actualizarApuesta(); // Llama a la función para actualizar el display
+    if (apuesta > 10) { 
+        apuesta -= 10;  
+        actualizarApuesta(); 
     }
 });
 
@@ -185,7 +185,7 @@ actualizarApuesta();
                 // Agregar la imagen a la celda
                 celda.appendChild(img);
             });
-        }, 100); // Cambiar de símbolo cada 100ms para simular el giro
+        }, 50); // Cambiar de símbolo cada 100ms para simular el giro
     
         // Después de 2 segundos, detener la animación y mostrar los resultados finales
         setTimeout(function() {
@@ -199,6 +199,32 @@ actualizarApuesta();
     
     // Inicializar el saldo en pantalla (si tienes una función para ello)
     actualizarSaldo();
+
+
+/*--------------------------------------------------------------------------------------- */
+/*Funcion para mostrar el modal de la informacion de las conbinaciones*/
+// Selección de elementos
+const botonInfo = document.getElementById('infoButton');
+const infoModal = document.getElementById('infoModal');
+const closeInfo = document.querySelector('.close-info');
+
+// Abrir el modal al hacer clic en el botón de información
+botonInfo.addEventListener('click', () => {
+    infoModal.style.display = 'block';
+});
+
+// Cerrar el modal al hacer clic en la "X"
+closeInfo.addEventListener('click', () => {
+    infoModal.style.display = 'none';
+});
+
+// Cerrar el modal al hacer clic fuera del contenido
+window.addEventListener('click', (event) => {
+    if (event.target === infoModal) {
+        infoModal.style.display = 'none';
+    }
+});
+
 
 
 /*--------------------------------------------------------------------------------------- */
@@ -325,11 +351,6 @@ function verificarGanancia() {
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
-        
-        // Verticales
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
         
         // Diagonales
         [0, 4, 8],
