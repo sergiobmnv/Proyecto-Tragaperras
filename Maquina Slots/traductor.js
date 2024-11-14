@@ -26,6 +26,8 @@ i18next.init({
                     "Creditos",
                 girarBtn:
                     "Girar",
+                tiradasJackpot:
+                    "Tiradas:"
             }
         }, 
         en:{
@@ -52,6 +54,8 @@ i18next.init({
                     "Credits",
                 girarBtn:
                     "Spin",
+                tiradasJackpot:
+                    "Throws:"
             }
         },
     }
@@ -77,7 +81,7 @@ function traducir() {
         document.getElementById("apuestaTraductor").innerHTML = t('apuestaTraductor');
         document.getElementById("creditoTraductos").innerHTML = t('creditoTraductos');
         document.getElementById("girarBtn").innerHTML = t('girarBtn');
-
+        document.getElementById("tiradasJackpot").innerHTML = t('tiradasJackpot');
         // Alternar la bandera
         const bandera = document.querySelector('.bandera');
         if (nuevoIdioma === 'en') {
