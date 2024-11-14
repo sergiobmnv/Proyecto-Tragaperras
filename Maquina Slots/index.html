@@ -23,6 +23,16 @@
         <span id="horaActual"></span>
     </div>
 
+    <div class="jackpot">
+        <button id="jackpotBtn">
+            <i class="fas fa-gem"></i> Jackpot
+        </button>
+    </div>
+
+    <div class="tiradas">
+        <strong>Tiradas gratis: </strong><span id="tiradas">0</span> 
+    </div>
+
     <div class="botones">
         <button class="btn depositar" id="depositarBtn">Depositar</button>
         <button class="btn retirar" id="retirarBtn">Retirar</button>
@@ -103,46 +113,47 @@
     </div>
 
     <div class="info-tablero">
-        <!-- Control de volumen/música -->
-        <audio id="musicaFondo" src="../assets/ambiente.mp3" autoplay loop></audio>
-        <div class="volumen">
-            <i id="iconoMusica" class="fas fa-volume-up"></i>
-            <input type="range" id="controlVolumen" min="0" max="1" value="0.5" step="0.1"/>
-        </div>
+            <!-- Control de volumen/música -->
+            <audio id="musicaFondo" src="../assets/ambiente.mp3" autoplay loop></audio>
+            <div class="volumen">
+                <i id="iconoMusica" class="fas fa-volume-up"></i>
+                <input type="range" id="controlVolumen" min="0" max="1" value="0.5" step="0.1"/>
+            </div>
 
-        <!-- Botón de Información -->
-        <button id="infoButton" class="info-button">i</button>
+            <!-- Botón de Información -->
+            <button id="infoButton" class="info-button">i</button>
 
-        <div class="cambiar-idioma">
-            <button id="evento" onclick="traducir()">
-                Cambiar Idioma
-                <span class="bandera"></span>
-            </button>
-        </div>
-        
-        <div class="ajustes">
-            <button id="botonBlancoNegro">
-                <i id="iconoModo" class="fas fa-sun"></i>
-            </button>
-        </div>
-        
+            <!--Cambiar idioma de español a ingles-->
+            <div class="cambiar-idioma">
+                <button id="evento" onclick="traducir()">
+                    Cambiar Idioma
+                    <span class="bandera"></span>
+                </button>
+            </div>
+            
+            <!--Cambiar de color a blanco y negro-->
+            <div class="ajustes">
+                <button id="botonBlancoNegro">
+                    <i id="iconoModo" class="fas fa-sun"></i>
+                </button>
+            </div>
 
-        <!-- Mostrar saldo -->
-        <div class="saldo">
-            <p id="saldoSaldo">Saldo:</p> <span id="saldo">0</span> <p id="creditoSaldo">créditos</p>
-        </div>
+        <!-- Mostrar saldo y apuesta-->
+            <div class="saldo">
+                <p id="saldoSaldo">Saldo:</p> <span id="saldo">0</span> <p id="creditoSaldo">créditos</p>
+            </div>
 
-        <div class="apuesta">
-            <p id="apuestaTraductor">Apuesta:</p> <span id="apuesta">10</span> <p id="creditoTraductos">créditos</p>
-        </div>
+            <div class="apuesta">
+                <p id="apuestaTraductor">Apuesta:</p> <span id="apuesta">10</span> <p id="creditoTraductos">créditos</p>
+            </div>
         
     
         <!-- Control para girar y cambiar la apuesta -->
-        <div class="girar-subir-bajar-apuesta">
-            <button id="bajarApuesta">-</button>
-            <button id="girarBtn">Girar</button>
-            <button id="subirApuesta">+</button>
-        </div>
+            <div class="girar-subir-bajar-apuesta">
+                <button id="bajarApuesta">-</button>
+                <button id="girarBtn">Girar</button>
+                <button id="subirApuesta">+</button>
+            </div>
     </div>
 
 
@@ -229,6 +240,23 @@
             <span class="close-premio">&times;</span>
             <h2>¡Felicidades!</h2>
             <p id="premioMensaje">¡Has ganado!</p>
+        </div>
+    </div>
+
+    <!-- Modal para saldo suficiente -->
+    <div id="modal-saldo-suficiente" class="modal-jackpot">
+        <div class="modal-jackpot-content">
+            <h2>¡Has ganado 20 tiradas gratis!</h2>
+            <p>Saldo actualizado: <span id="saldo-actualizado"></span></p>
+            <button id="cerrar-saldo-suficiente">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal para saldo insuficiente -->
+    <div id="modal-saldo-insuficiente" class="modal-jackpot">
+        <div class="modal-jackpot-content">
+            <h2>No tienes suficiente saldo para jugar al Jackpot.</h2>
+            <button id="cerrar-saldo-insuficiente">Cerrar</button>
         </div>
     </div>
 

@@ -1,6 +1,10 @@
 
 // Variables de saldo y elementos del DOM
 let saldo = 0; // Saldo inicial
+let tiradas = 0;  // Tiradas iniciales
+
+const tiradasElemento = document.getElementById('tiradas');
+const jackpotBtn = document.getElementById('jackpotBtn');
 const saldoElemento = document.getElementById('saldo');
 
 // Modal de depósito y sus elementos
@@ -12,7 +16,7 @@ const closeModalBtn = document.querySelector('.close');
 
 // Modal de retiro y sus elementos
 const retiroModal = document.getElementById('retiroModal');
-const retirarBtn = document.querySelector('.retirar'); // Suponiendo que el botón tiene esta clase
+const retirarBtn = document.querySelector('.retirar');
 const confirmarRetiroBtn = document.getElementById('confirmarRetiro');
 const cantidadRetiroInput = document.getElementById('cantidadRetiro');
 const closeRetirarModalBtn = document.querySelector('.close-retirar');
@@ -97,7 +101,7 @@ actualizarSaldo();
 
 /*--------------------------------------------------------------------------------------- */
 
-// Inicializa la apuesta en 10 créditos
+
 let apuesta = 20;
 
 // Selecciona el elemento donde se mostrará la apuesta
@@ -130,20 +134,22 @@ actualizarApuesta();
 
     // Función del botón "Girar" con comprobación de saldo
     girarBtn.addEventListener("click", function() {
-        if (saldo >= apuesta) {
-            // Saldo suficiente: Descontamos la apuesta y giramos
-            saldo -= apuesta;
-            actualizarSaldo();
-    
-            // Quitamos el mensaje de saldo insuficiente
-            girarBtn.classList.remove("insufficient");
-            girarBtn.removeAttribute("data-tooltip");
-    
-            
+        if (tiradas > 0 ) {
             girarCeldas();
-    
-            // Aquí se podría añadir la lógica de verificación de combinaciones ganadoras
-        } else {
+            tiradas --;
+            tiradasElemento.textContent = tiradas;
+        }else if (saldo >= apuesta) {
+                // Saldo suficiente: Descontamos la apuesta y giramos
+                saldo -= apuesta;
+                actualizarSaldo();
+        
+                // Quitamos el mensaje de saldo insuficiente
+                girarBtn.classList.remove("insufficient");
+                girarBtn.removeAttribute("data-tooltip");
+        
+                girarCeldas();
+            
+        } else{
             // Saldo insuficiente: mostrar mensaje al hacer hover
             girarBtn.classList.add("insufficient");
             girarBtn.setAttribute("data-tooltip", "Saldo insuficiente");
@@ -312,6 +318,18 @@ function mostrarMensaje(texto, color = '#ff4d4d') {
         mensajeElemento.classList.remove('mostrar');
     }, 3000);
 }
+
+
+/*------------------------------------------------------------------------------------------*/
+
+//Modal para mostrar la informacion de las combinaciones.
+// Mostrar el modal cuando se necesita
+document.querySelector('.modal-info').classList.add('show');
+
+// Cerrar el modal al hacer clic en la 'X'
+document.querySelector('.close-info').addEventListener('click', function() {
+    document.querySelector('.modal-info').classList.remove('show');
+});
 
 /*------------------------------------------------------------------------------------------*/
 /*FUNCIONALIDAD PARA COMPROBAR LAS CELDAS Y QUE DE PREMIO*/
@@ -594,11 +612,48 @@ function girarCeldas() {
 }
 
 /*-------------------------------------------------------------------------------------------*/
-//Modal para mostrar la informacion de las combinaciones.
-// Mostrar el modal cuando se necesita
-document.querySelector('.modal-info').classList.add('show');
 
-// Cerrar el modal al hacer clic en la 'X'
-document.querySelector('.close-info').addEventListener('click', function() {
-    document.querySelector('.modal-info').classList.remove('show');
+
+const saldoActualizado = document.getElementById('saldo-actualizado');
+// Evento para el botón de Jackpot
+
+jackpotBtn.addEventListener('click', () => {
+    // Comprobar si el saldo es suficiente para jugar
+    if (saldo >= 200) {
+        saldo -= 200;  // Restar 200 del saldo
+        tiradas += 20;  // Sumar 20 tiradas gratis
+
+        // Actualizar los valores mostrados en pantalla
+        saldoElemento.textContent = `Saldo: ${saldo}`;
+        tiradasElemento.textContent = `Tiradas: ${tiradas}`;
+
+        // Mostrar el modal de saldo suficiente
+        const modalSaldoSuficiente = document.getElementById('modal-saldo-suficiente');
+        saldoActualizado.textContent = saldo; // Mostrar saldo actualizado en el modal
+        modalSaldoSuficiente.style.display = 'block';
+    } else {
+        // Mostrar el modal de saldo insuficiente
+        const modalSaldoInsuficiente = document.getElementById('modal-saldo-insuficiente');
+        modalSaldoInsuficiente.style.display = 'block';
+    }
 });
+
+// Función para cerrar el modal
+function cerrarModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';  // Ocultar el modal
+}
+
+// Evento para cerrar el modal de saldo suficiente
+document.getElementById('cerrar-saldo-suficiente').addEventListener('click', () => {
+    cerrarModal('modal-saldo-suficiente');
+});
+
+// Evento para cerrar el modal de saldo insuficiente
+document.getElementById('cerrar-saldo-insuficiente').addEventListener('click', () => {
+    cerrarModal('modal-saldo-insuficiente');
+});
+
+
+
+
