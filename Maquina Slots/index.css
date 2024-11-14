@@ -89,22 +89,6 @@ header {
 .retirar:hover {
     background-color: #e53935; /* Color más oscuro al pasar el mouse */
 }
-/*----------------------------------------------------------------------------------------------------*/
-
-
-/* ICONO DEL USUARIO */
-.menuUsuario {
-    position: absolute;
-    right: 20px; /* Ajusta la posición hacia la derecha */
-    display: flex;
-    align-items: center;
-}
-
-.menuUsuario .user {
-    font-size: 40px; /* Tamaño del icono */
-    color: white; /* Color del icono */
-    cursor: pointer;
-}
 
 /*----------------------------------------------------------------------------------------------------*/
 /* Reloj */
@@ -218,7 +202,7 @@ marquee {
     justify-content: center;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 18px rgb(0, 187, 255);
+    
 }
 
 .gifZeus img {
