@@ -613,9 +613,8 @@ function girarCeldas() {
 
 /*-------------------------------------------------------------------------------------------*/
 
-
-const saldoActualizado = document.getElementById('saldo-actualizado');
 // Evento para el botón de Jackpot
+const saldoActualizado = document.getElementById('saldo-actualizado');
 
 jackpotBtn.addEventListener('click', () => {
     // Comprobar si el saldo es suficiente para jugar
@@ -639,20 +638,20 @@ jackpotBtn.addEventListener('click', () => {
 });
 
 // Función para cerrar el modal
-function cerrarModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none';  // Ocultar el modal
-}
+    function cerrarModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';  // Ocultar el modal
+    }
 
-// Evento para cerrar el modal de saldo suficiente
-document.getElementById('cerrar-saldo-suficiente').addEventListener('click', () => {
-    cerrarModal('modal-saldo-suficiente');
-});
+    // Evento para cerrar el modal de saldo suficiente
+    document.getElementById('cerrar-saldo-suficiente').addEventListener('click', () => {
+        cerrarModal('modal-saldo-suficiente');
+    });
 
-// Evento para cerrar el modal de saldo insuficiente
-document.getElementById('cerrar-saldo-insuficiente').addEventListener('click', () => {
-    cerrarModal('modal-saldo-insuficiente');
-});
+    // Evento para cerrar el modal de saldo insuficiente
+    document.getElementById('cerrar-saldo-insuficiente').addEventListener('click', () => {
+        cerrarModal('modal-saldo-insuficiente');
+    });
 
 
 
