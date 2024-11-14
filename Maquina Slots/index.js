@@ -153,11 +153,11 @@ actualizarApuesta();
 
     // Función para hacer girar las celdas
     const simbolos = [
-        "assets/Dragon-icono.png",
-        "assets/trueno-icono.png",
-        "assets/espadas.png",
-        "assets/zeus-icono.png",
-        "assets/bufalo.png"
+        "../assets/Dragon-icono.png",
+        "../assets/trueno-icono.png",
+        "../assets/espadas.png",
+        "../assets/zeus-icono.png",
+        "../assets/bufalo.png"
     ];
 
     function girarCeldas() {
@@ -247,10 +247,10 @@ var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("
     // Cambiar el fondo de la página (imagen)
     if (document.body.classList.contains('blancoNegro')) {
         // Si está en modo blanco y negro, cambiar la imagen a la original
-        document.body.style.backgroundImage = "url('assets/Fondo-Body.jpg')";
+        document.body.style.backgroundImage = "url('../assets/Fondo-Body.jpg')";
     } else {
         // Si está en modo color, cambiar la imagen a la modificada
-        document.body.style.backgroundImage = "url('assets/Fondo-Body-modified.jpg')";
+        document.body.style.backgroundImage = "url('../assets/Fondo-Body-modified.jpg')";
     }
 
     // Cambiar el color de fondo de los botones
@@ -320,8 +320,6 @@ const premioModal = document.getElementById('premioModal');
 const premioMensaje = document.getElementById('premioMensaje');
 const closePremioBtn = document.querySelector('.close-premio');
 
-
-
 /*------------------------------------------------------------------------------------------*/
 // Función para verificar combinaciones ganadoras
 // Lista de imágenes de símbolos
@@ -335,11 +333,11 @@ const combinaciones = [
 
 // Premios asociados a las imágenes
 const premios = {
-    'assets/Dragon-icono.png': 10,
-    'assets/trueno-icono.png': 15,
-    'assets/espadas.png': 20,
-    'assets/zeus-icono.png': 25,
-    'assets/bufalo.png': 30
+    '../assets/Dragon-icono.png': 10,
+    '../assets/trueno-icono.png': 15,
+    '../assets/espadas.png': 20,
+    '../assets/zeus-icono.png': 25,
+    '../assets/bufalo.png': 30
 };
 
 // Función para verificar combinaciones ganadoras

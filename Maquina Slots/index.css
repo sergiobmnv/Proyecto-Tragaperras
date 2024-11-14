@@ -1,6 +1,6 @@
 
 body {
-    background-image: url("assets/Fondo-Body.jpg");
+    background-image: url("../assets/Fondo-Body.jpg");
     background-size: cover;
     background-position: center;
     transition: filter 0.3s ease;
