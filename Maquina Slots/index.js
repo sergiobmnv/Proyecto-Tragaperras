@@ -166,6 +166,8 @@ actualizarApuesta();
         "../assets/bufalo.png"
     ];
 
+    let giroActivo = false;
+
     function girarCeldas() {
         const celdas = document.querySelectorAll(".celda");
     
