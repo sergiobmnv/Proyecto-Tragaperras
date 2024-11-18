@@ -102,25 +102,51 @@ actualizarSaldo();
 /*--------------------------------------------------------------------------------------- */
 
 
-let apuesta = 20;
+let apuesta = 20; // Apuesta inicial
+const MAX_APUESTA = 300; // Límite máximo de apuesta
 
 // Selecciona el elemento donde se mostrará la apuesta
 const apuestaDisplay = document.getElementById('apuesta');
+
+// Modal para apuesta máxima
+const modalApuestaMaxima = document.getElementById('modalApuestaMaxima');
+const cerrarModalApuesta = document.getElementById('cerrarModalApuesta');
 
 // Función para actualizar el display de apuesta
 function actualizarApuesta() {
     apuestaDisplay.textContent = apuesta; // Actualiza el contenido del span con el id 'apuesta'
 }
 
+// Mostrar el modal de apuesta máxima
+function mostrarModalApuestaMaxima() {
+    modalApuestaMaxima.style.display = 'block';
+}
+
+// Cerrar el modal de apuesta máxima al hacer clic en la "X"
+cerrarModalApuesta.addEventListener('click', () => {
+    modalApuestaMaxima.style.display = 'none';
+});
+
+// Cerrar el modal de apuesta máxima al hacer clic fuera del contenido
+window.addEventListener('click', (event) => {
+    if (event.target === modalApuestaMaxima) {
+        modalApuestaMaxima.style.display = 'none';
+    }
+});
+
 // Botón de aumentar la apuesta
 document.getElementById('subirApuesta').addEventListener('click', function() {
-    apuesta += 10; // Aumenta la apuesta
-    actualizarApuesta(); // Llama a la función para actualizar el display
+    if (apuesta < MAX_APUESTA) { // Verifica si no se excede la apuesta máxima
+        apuesta += 10; // Aumenta la apuesta
+        actualizarApuesta(); // Llama a la función para actualizar el display
+    } else {
+        mostrarModalApuestaMaxima(); // Muestra el modal cuando se alcanza el máximo
+    }
 });
 
 // Botón de disminuir la apuesta
 document.getElementById('bajarApuesta').addEventListener('click', function() {
-    if (apuesta > 10) { 
+    if (apuesta > 10) { // Verifica que la apuesta no sea menor a 10
         apuesta -= 10;  
         actualizarApuesta(); 
     }
@@ -128,6 +154,8 @@ document.getElementById('bajarApuesta').addEventListener('click', function() {
 
 // Inicializa el display de la apuesta al cargar la página
 actualizarApuesta();
+
+
 
 
 /*--------------------------------------------------------------------------------------- */
