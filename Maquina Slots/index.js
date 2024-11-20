@@ -246,8 +246,6 @@ function girarCeldas() {
 // Inicializar el saldo en pantalla (si tienes una función para ello)
 actualizarSaldo();
 
-
-
 /*--------------------------------------------------------------------------------------- */
 /*Funcion para mostrar el modal de la informacion de las conbinaciones*/
 // Selección de elementos
