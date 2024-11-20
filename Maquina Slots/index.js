@@ -60,7 +60,7 @@ window.addEventListener('click', (event) => {
 // Confirmar el depósito y actualizar el saldo
 confirmarDepositoBtn.addEventListener('click', () => {
     const cantidadDeposito = parseFloat(cantidadDepositoInput.value);
-    
+
     // Validación para asegurar que se ingrese una cantidad válida
     if (isNaN(cantidadDeposito) || cantidadDeposito <= 0) {
         mostrarMensaje("Por favor, ingresa una cantidad válida.");
@@ -77,7 +77,7 @@ confirmarDepositoBtn.addEventListener('click', () => {
 // Confirmar el retiro y actualizar el saldo
 confirmarRetiroBtn.addEventListener('click', () => {
     const cantidadRetiro = parseFloat(cantidadRetiroInput.value);
-    
+
     // Validación para asegurar que se ingrese una cantidad válida
     if (isNaN(cantidadRetiro) || cantidadRetiro <= 0) {
         mostrarMensaje("Por favor, ingresa una cantidad válida.");
@@ -135,7 +135,7 @@ window.addEventListener('click', (event) => {
 });
 
 // Botón de aumentar la apuesta
-document.getElementById('subirApuesta').addEventListener('click', function() {
+document.getElementById('subirApuesta').addEventListener('click', function () {
     if (apuesta < MAX_APUESTA) { // Verifica si no se excede la apuesta máxima
         apuesta += 10; // Aumenta la apuesta
         actualizarApuesta(); // Llama a la función para actualizar el display
@@ -145,10 +145,10 @@ document.getElementById('subirApuesta').addEventListener('click', function() {
 });
 
 // Botón de disminuir la apuesta
-document.getElementById('bajarApuesta').addEventListener('click', function() {
+document.getElementById('bajarApuesta').addEventListener('click', function () {
     if (apuesta > 10) { // Verifica que la apuesta no sea menor a 10
-        apuesta -= 10;  
-        actualizarApuesta(); 
+        apuesta -= 10;
+        actualizarApuesta();
     }
 });
 
@@ -157,81 +157,81 @@ actualizarApuesta();
 
 /*--------------------------------------------------------------------------------------- */
 
-    // Función del botón "Girar" con comprobación de saldo
-    girarBtn.addEventListener("click", function() {
-        if (tiradas > 0 ) {
-            girarCeldas();
-            tiradas --;
-            tiradasElemento.textContent = tiradas;
-        }else if (saldo >= apuesta) {
-                // Saldo suficiente: Descontamos la apuesta y giramos
-                saldo -= apuesta;
-                actualizarSaldo();
-        
-                // Quitamos el mensaje de saldo insuficiente
-                girarBtn.classList.remove("insufficient");
-                girarBtn.removeAttribute("data-tooltip");
-        
-                girarCeldas();
-            
-        } else{
-            // Saldo insuficiente: mostrar mensaje al hacer hover
-            girarBtn.classList.add("insufficient");
-            girarBtn.setAttribute("data-tooltip", "Saldo insuficiente");
-        }
+// Función del botón "Girar" con comprobación de saldo
+girarBtn.addEventListener("click", function () {
+    if (tiradas > 0) {
+        girarCeldas();
+        tiradas--;
+        tiradasElemento.textContent = tiradas;
+    } else if (saldo >= apuesta) {
+        // Saldo suficiente: Descontamos la apuesta y giramos
+        saldo -= apuesta;
+        actualizarSaldo();
+
+        // Quitamos el mensaje de saldo insuficiente
+        girarBtn.classList.remove("insufficient");
+        girarBtn.removeAttribute("data-tooltip");
+
+        girarCeldas();
+
+    } else {
+        // Saldo insuficiente: mostrar mensaje al hacer hover
+        girarBtn.classList.add("insufficient");
+        girarBtn.setAttribute("data-tooltip", "Saldo insuficiente");
+    }
+});
+
+
+// Función para hacer girar las celdas
+const simbolos = [
+    "../assets/Dragon-icono.png",
+    "../assets/trueno-icono.png",
+    "../assets/espadas.png",
+    "../assets/zeus-icono.png",
+    "../assets/bufalo.png"
+];
+
+let giroActivo = false;
+
+function girarCeldas() {
+    const celdas = document.querySelectorAll(".celda");
+
+    // Agrega una clase de animación a cada celda
+    celdas.forEach(celda => {
+        celda.classList.add("animando");
     });
 
-
-    // Función para hacer girar las celdas
-    const simbolos = [
-        "../assets/Dragon-icono.png",
-        "../assets/trueno-icono.png",
-        "../assets/espadas.png",
-        "../assets/zeus-icono.png",
-        "../assets/bufalo.png"
-    ];
-
-    let giroActivo = false;
-
-    function girarCeldas() {
-        const celdas = document.querySelectorAll(".celda");
-    
-        // Agrega una clase de animación a cada celda
+    // Crear una función que cambia los símbolos aleatorios
+    let interval = setInterval(function () {
         celdas.forEach(celda => {
-            celda.classList.add("animando");
-         });
-    
-        // Crear una función que cambia los símbolos aleatorios
-        let interval = setInterval(function() {
-            celdas.forEach(celda => {
-                let randomIndex = Math.floor(Math.random() * simbolos.length);
-                let imgSrc = simbolos[randomIndex];
-    
-                // Limpia el contenido de la celda
-                celda.innerHTML = "";
-    
-                // Crear un nuevo elemento de imagen
-                let img = document.createElement("img");
-                img.src = imgSrc;
-                img.style.width = "20%"; // Ajusta el tamaño si es necesario
-    
-                // Agregar la imagen a la celda
-                celda.appendChild(img);
-            });
-        }, 50); // Cambiar de símbolo cada 100ms para simular el giro
-    
-        // Después de 2 segundos, detener la animación y mostrar los resultados finales
-        setTimeout(function() {
-            clearInterval(interval); // Detener el intervalo
-            // Remover la clase de animación de las celdas para detener el efecto de movimiento
+            let randomIndex = Math.floor(Math.random() * simbolos.length);
+            let imgSrc = simbolos[randomIndex];
+
+            // Limpia el contenido de la celda
+            celda.innerHTML = "";
+
+            // Crear un nuevo elemento de imagen
+            let img = document.createElement("img");
+            img.src = imgSrc;
+            img.style.width = "20%"; // Ajusta el tamaño si es necesario
+
+            // Agregar la imagen a la celda
+            celda.appendChild(img);
+        });
+    }, 50); // Cambiar de símbolo cada 100ms para simular el giro
+
+    // Después de 2 segundos, detener la animación y mostrar los resultados finales
+    setTimeout(function () {
+        clearInterval(interval); // Detener el intervalo
+        // Remover la clase de animación de las celdas para detener el efecto de movimiento
         celdas.forEach(celda => {
             celda.classList.remove("animando");
         });
-        }, 2000); // Duración del giro (2 segundos en este caso)
-    }
-    
-    // Inicializar el saldo en pantalla (si tienes una función para ello)
-    actualizarSaldo();
+    }, 2000); // Duración del giro (2 segundos en este caso)
+}
+
+// Inicializar el saldo en pantalla (si tienes una función para ello)
+actualizarSaldo();
 
 
 /*--------------------------------------------------------------------------------------- */
@@ -269,14 +269,14 @@ function actualizarReloj() {
     document.getElementById('horaActual').textContent = tiempo; // Actualizar el contenido del reloj
 }
 
-    // Llama a la función al cargar la página y cada segundo
-    actualizarReloj(); // Inicializar el reloj
-    setInterval(actualizarReloj, 1000); // Actualizar cada segundo
+// Llama a la función al cargar la página y cada segundo
+actualizarReloj(); // Inicializar el reloj
+setInterval(actualizarReloj, 1000); // Actualizar cada segundo
 
 /*--------------------------------------------------------------------------------------- */
 
-   /* Evento Blanco y Negro */
-var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("click", function() {
+/* Evento Blanco y Negro */
+var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("click", function () {
     // Cambiar el fondo de la página (imagen)
     if (document.body.classList.contains('blancoNegro')) {
         // Si está en modo blanco y negro, cambiar la imagen a la original
@@ -288,16 +288,16 @@ var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("
 
     // Cambiar el color de fondo de los botones
     var botonesDepositar = document.getElementById("depositarBtn");
-    botonesDepositar.style.backgroundColor = document.body.classList.contains('blancoNegro');  
+    botonesDepositar.style.backgroundColor = document.body.classList.contains('blancoNegro');
     var botonRetirar = document.getElementById("retirarBtn");
-    botonRetirar.style.backgroundColor = document.body.classList.contains('blancoNegro');  
+    botonRetirar.style.backgroundColor = document.body.classList.contains('blancoNegro');
 
     // Cambiar entre el modo blanco y negro y el modo normal
     document.body.classList.toggle('blancoNegro');
-    
+
     // Cambiar el icono de sol a luna y viceversa
     let icono = document.getElementById('iconoModo');
-    
+
     if (document.body.classList.contains('blancoNegro')) {
         icono.classList.remove('fas', 'fa-sun');
         icono.classList.add('fas', 'fa-moon');
@@ -339,7 +339,7 @@ function mostrarMensaje(texto, color = '#ff4d4d') {
     mensajeElemento.textContent = texto;
     mensajeElemento.style.backgroundColor = color; // Cambia el color si es necesario
     mensajeElemento.classList.add('mostrar');
-    
+
     // Ocultar el mensaje después de 3 segundos
     setTimeout(() => {
         mensajeElemento.classList.remove('mostrar');
@@ -354,7 +354,7 @@ function mostrarMensaje(texto, color = '#ff4d4d') {
 document.querySelector('.modal-info').classList.add('show');
 
 // Cerrar el modal al hacer clic en la 'X'
-document.querySelector('.close-info').addEventListener('click', function() {
+document.querySelector('.close-info').addEventListener('click', function () {
     document.querySelector('.modal-info').classList.remove('show');
 });
 
@@ -369,11 +369,11 @@ const closePremioBtn = document.querySelector('.close-premio');
 // Función para verificar combinaciones ganadoras
 // Lista de imágenes de símbolos
 const combinaciones = [
-    'assets/Dragon-icono.png',  
-    'assets/trueno-icono.png',   
-    'assets/espadas.png',  
-    'assets/zeus-icono.png', 
-    'assets/bufalo.png'    
+    'assets/Dragon-icono.png',
+    'assets/trueno-icono.png',
+    'assets/espadas.png',
+    'assets/zeus-icono.png',
+    'assets/bufalo.png'
 ];
 
 // Premios asociados a las imágenes
@@ -396,7 +396,7 @@ function verificarGanancia() {
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
-        
+
         // Diagonales
         [0, 4, 8],
         [2, 4, 6],
@@ -414,7 +414,7 @@ function verificarGanancia() {
     // Recorre cada combinación ganadora para verificar si hay coincidencia
     combinacionesGanadoras.forEach(combinacion => {
         const [a, b, c] = combinacion;
-    
+
         // Verifica si los tres símbolos en la combinación son iguales
         if (simbolosActuales[a] === simbolosActuales[b] && simbolosActuales[b] === simbolosActuales[c]) {
             // Agrega clase 'ganadora' para resaltar las celdas ganadoras
@@ -422,20 +422,20 @@ function verificarGanancia() {
             celdas[b].classList.add('ganadora');
             celdas[c].classList.add('ganadora');
 
-            if (a == 0 && b ==1 && c == 2) {
+            if (a == 0 && b == 1 && c == 2) {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
@@ -443,33 +443,33 @@ function verificarGanancia() {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
-            } else if (a == 6 && b == 7 && c == 8){
+            } else if (a == 6 && b == 7 && c == 8) {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
@@ -477,127 +477,127 @@ function verificarGanancia() {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
-            }else if (a == 2 && b == 4 && c == 6) {
+            } else if (a == 2 && b == 4 && c == 6) {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
-            }else if (a == 3 && b == 4 && c == 8) {
+            } else if (a == 3 && b == 4 && c == 8) {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
-            }else if (a == 3 && b == 4 && c == 2) {
+            } else if (a == 3 && b == 4 && c == 2) {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
-            }else if (a == 0 && b == 1 && c == 5) {
+            } else if (a == 0 && b == 1 && c == 5) {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
-            }else if (a == 6 && b == 7 && c == 5) {
+            } else if (a == 6 && b == 7 && c == 5) {
                 if (simbolosActuales[a].substring(22) == combinaciones[0] && simbolosActuales[b].substring(22) == combinaciones[0] && simbolosActuales[c].substring(22) == combinaciones[0]) {
                     mostrarPremio('¡Has ganado 10 créditos!');
                     saldo += 10; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[1] && simbolosActuales[b].substring(22) == combinaciones[1] && simbolosActuales[c].substring(22) == combinaciones[1]) {
                     mostrarPremio('¡Has ganado 15 créditos!');
                     saldo += 15; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[2] && simbolosActuales[b].substring(22) == combinaciones[2] && simbolosActuales[c].substring(22) == combinaciones[2]) {
                     mostrarPremio('¡Has ganado 20 créditos!');
                     saldo += 20; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[3] && simbolosActuales[b].substring(22) == combinaciones[3] && simbolosActuales[c].substring(22) == combinaciones[3]) {
                     mostrarPremio('¡Has ganado 25 créditos!');
                     saldo += 25; // Asigna el premio
-                }else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
+                } else if (simbolosActuales[a].substring(22) == combinaciones[4] && simbolosActuales[b].substring(22) == combinaciones[4] && simbolosActuales[c].substring(22) == combinaciones[4]) {
                     mostrarPremio('¡Has ganado 30 créditos!');
                     saldo += 30; // Asigna el premio
                 }
             }
-            
+
             // Mostrar el premio al usuario
             actualizarSaldo();
             gano = true;
         }
         // Función para mostrar el modal de premio
-    function mostrarPremio(mensaje) {
-        premioMensaje.textContent = mensaje;
-        premioModal.style.display = 'block';
-    }
-
-    // Cerrar el modal de premio al hacer clic en la 'X'
-    closePremioBtn.addEventListener('click', () => {
-        premioModal.style.display = 'none';
-    });
-
-    // Cerrar el modal de premio al hacer clic fuera del modal
-    window.addEventListener('click', (event) => {
-        if (event.target === premioModal) {
-            premioModal.style.display = 'none';
+        function mostrarPremio(mensaje) {
+            premioMensaje.textContent = mensaje;
+            premioModal.style.display = 'block';
         }
-    });
+
+        // Cerrar el modal de premio al hacer clic en la 'X'
+        closePremioBtn.addEventListener('click', () => {
+            premioModal.style.display = 'none';
+        });
+
+        // Cerrar el modal de premio al hacer clic fuera del modal
+        window.addEventListener('click', (event) => {
+            if (event.target === premioModal) {
+                premioModal.style.display = 'none';
+            }
+        });
     });
 
     // Si no hubo ganancia, remover cualquier borde verde previo
@@ -617,7 +617,7 @@ function girarCeldas() {
     const celdas = document.querySelectorAll(".celda");
     celdas.forEach(celda => celda.classList.add("animando"));
 
-    let interval = setInterval(function() {
+    let interval = setInterval(function () {
         celdas.forEach(celda => {
             let randomIndex = Math.floor(Math.random() * simbolos.length);
             let imgSrc = simbolos[randomIndex];
@@ -629,10 +629,10 @@ function girarCeldas() {
         });
     }, 100);
 
-    setTimeout(function() {
+    setTimeout(function () {
         clearInterval(interval);
         celdas.forEach(celda => celda.classList.remove("animando"));
-        
+
         // Verifica la ganancia después de que el giro termine
         verificarGanancia();
     }, 2000);
@@ -665,21 +665,17 @@ jackpotBtn.addEventListener('click', () => {
 });
 
 // Función para cerrar el modal
-    function cerrarModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'none';  // Ocultar el modal
-    }
+function cerrarModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';  // Ocultar el modal
+}
 
-    // Evento para cerrar el modal de saldo suficiente
-    document.getElementById('cerrar-saldo-suficiente').addEventListener('click', () => {
-        cerrarModal('modal-saldo-suficiente');
-    });
+// Evento para cerrar el modal de saldo suficiente
+document.getElementById('cerrar-saldo-suficiente').addEventListener('click', () => {
+    cerrarModal('modal-saldo-suficiente');
+});
 
-    // Evento para cerrar el modal de saldo insuficiente
-    document.getElementById('cerrar-saldo-insuficiente').addEventListener('click', () => {
-        cerrarModal('modal-saldo-insuficiente');
-    });
-
-
-
-
+// Evento para cerrar el modal de saldo insuficiente
+document.getElementById('cerrar-saldo-insuficiente').addEventListener('click', () => {
+    cerrarModal('modal-saldo-insuficiente');
+});

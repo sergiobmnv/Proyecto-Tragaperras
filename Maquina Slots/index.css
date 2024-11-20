@@ -1,4 +1,3 @@
-
 body {
     background-image: url("../assets/Fondo-Body.jpg");
     background-size: cover;
@@ -21,7 +20,8 @@ header {
     height: 120px;
     max-width: 97%;
     position: relative;
-    padding: 0 20px; /* Espaciado interno */
+    padding: 0 20px;
+    /* Espaciado interno */
 
 }
 
@@ -36,76 +36,97 @@ header {
     font-size: 30px;
     font-family: cursive;
     text-shadow: 2px 2px 4px rgba(10, 10, 10, 0.8),
-                 -2px -2px 2px rgba(10, 10, 10, 0.8), 
-                 2px -2px 2px rgba(238, 255, 0, 0.8); 
+        -2px -2px 2px rgba(10, 10, 10, 0.8),
+        2px -2px 2px rgba(238, 255, 0, 0.8);
 }
 
 /*----------------------------------------------------------------------------------------------------*/
 /*ESTILO PARA EL LOGO*/
 .logo img {
-    width: 80px; /* Ajusta el tamaño del logo */
+    width: 80px;
+    /* Ajusta el tamaño del logo */
     height: auto;
     /* Efecto de sombra LED */
-    filter: drop-shadow(0 0 8px rgba(238, 255, 2, 0.8)) 
-    drop-shadow(0 0 15px rgba(255, 255, 1, 0.8)) 
-    drop-shadow(0 0 20px rgba(4, 0, 6, 0.8));
+    filter: drop-shadow(0 0 8px rgba(238, 255, 2, 0.8)) drop-shadow(0 0 15px rgba(255, 255, 1, 0.8)) drop-shadow(0 0 20px rgba(4, 0, 6, 0.8));
 }
 
 .logo {
-    margin-right: 20px; /* Espacio entre el logo y el texto */
+    margin-right: 20px;
+    /* Espacio entre el logo y el texto */
 }
 
 /*----------------------------------------------------------------------------------------------------*/
 /*BOTONES PARA RETIRAR Y DEPOSITAR.*/
 .botones {
-    display: flex; /* Alinea los botones en una fila */
-    margin-left: 80%; /* Empuja los botones hacia la derecha */
+    display: flex;
+    /* Alinea los botones en una fila */
+    margin-left: 80%;
+    /* Empuja los botones hacia la derecha */
     position: absolute;
 }
 
 .botones .btn {
-    padding: 5px 10px; /* Reducimos el espaciado interno */
-    margin: 5px; /* Espacio entre los botones */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
+    padding: 5px 10px;
+    /* Reducimos el espaciado interno */
+    margin: 5px;
+    /* Espacio entre los botones */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el mouse */
+    font-size: 14px;
+    /* Tamaño de fuente más pequeño */
 }
 
 .depositar {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: white; /* Color de texto blanco */
+    background-color: #4CAF50;
+    /* Color de fondo verde */
+    color: white;
+    /* Color de texto blanco */
 }
 
 .retirar {
-    background-color: #f44336; /* Color de fondo rojo */
-    color: white; /* Color de texto blanco */
+    background-color: #f44336;
+    /* Color de fondo rojo */
+    color: white;
+    /* Color de texto blanco */
 }
 
 .depositar:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+    background-color: #45a049;
+    /* Color más oscuro al pasar el mouse */
 }
 
 .retirar:hover {
-    background-color: #e53935; /* Color más oscuro al pasar el mouse */
+    background-color: #e53935;
+    /* Color más oscuro al pasar el mouse */
 }
 
 /*----------------------------------------------------------------------------------------------------*/
 /* Reloj */
 .reloj {
-    margin-left: 40px; /* Espacio entre el título y el reloj */
-    font-size: 25px; /* Tamaño de la fuente del reloj */
-    font-weight: lighter; /* Peso de la fuente del reloj */
+    margin-left: 40px;
+    /* Espacio entre el título y el reloj */
+    font-size: 25px;
+    /* Tamaño de la fuente del reloj */
+    font-weight: lighter;
+    /* Peso de la fuente del reloj */
     color: rgba(255, 255, 1, 0.8);
 }
 
 /*----------------------------------------------------------------------------------------------------*/
 /*MENSAJE: JUEGA CON RESPONSABILIDAD +18*/
 marquee {
-    position: absolute; /* Posiciona el marquee de manera absoluta dentro del header */
-    bottom: 0; /* Coloca el marquee en la parte inferior del header */
-    width: 97%; /* Asegura que ocupe todo el ancho del header */
-    text-align: center; /* Centra el texto dentro del marquee */
+    position: absolute;
+    /* Posiciona el marquee de manera absoluta dentro del header */
+    bottom: 0;
+    /* Coloca el marquee en la parte inferior del header */
+    width: 97%;
+    /* Asegura que ocupe todo el ancho del header */
+    text-align: center;
+    /* Centra el texto dentro del marquee */
     font-size: 14px;
     color: white;
 }
@@ -117,12 +138,15 @@ marquee {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%; /* Ajustar el ancho */
-    height: 60%; /* Ocupa el 80% de la altura de la ventana */
-    max-height: 80vh; /* Limitar el alto máximo */
+    width: 95%;
+    /* Ajustar el ancho */
+    height: 60%;
+    /* Ocupa el 80% de la altura de la ventana */
+    max-height: 80vh;
+    /* Limitar el alto máximo */
     box-sizing: border-box;
     padding: 10px;
-    
+
 }
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -147,7 +171,8 @@ marquee {
 .combinaciones h2 {
     font-size: 18px;
     margin-bottom: 5px;
-    color: #ffd700; /* Color dorado para el título */
+    color: #ffd700;
+    /* Color dorado para el título */
 }
 
 .combinaciones ul {
@@ -202,13 +227,14 @@ marquee {
     justify-content: center;
     border-radius: 20px;
     overflow: hidden;
-    
+
 }
 
 .gifZeus img {
     width: 90%;
     height: auto;
 }
+
 /*----------------------------------------------------------------------------------------------------*/
 
 
@@ -228,13 +254,15 @@ marquee {
     border-radius: 10px;
     box-sizing: border-box;
 }
+
 /*----------------------------------------------------------------------------------------------------*/
 
 /* Agrupación del volumen y saldo */
 .volumen-saldo {
     display: flex;
     align-items: center;
-    gap: 10px; /* Menor espacio entre el ícono y el texto */
+    gap: 10px;
+    /* Menor espacio entre el ícono y el texto */
 }
 
 /* Ícono de volumen */
@@ -250,7 +278,7 @@ marquee {
 body.blancoNegro {
     filter: grayscale(100%);
     background-image: url('assets/Fondo-Body.jpg');
-    
+
 }
 
 /* Estilos para el botón */
@@ -274,8 +302,10 @@ button:hover {
     align-items: center;
 }
 
-#botonBlancoNegro .fa-sun, #botonBlancoNegro .fa-moon {
-    color: #ffd700; /* Color dorado */
+#botonBlancoNegro .fa-sun,
+#botonBlancoNegro .fa-moon {
+    color: #ffd700;
+    /* Color dorado */
 }
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -283,22 +313,27 @@ button:hover {
 /* Contenedor para organizar saldo arriba de apuesta */
 .container {
     display: flex;
-    flex-direction: column; /* Coloca los div en columna */
-    gap: 10px; /* Espacio entre saldo y apuesta */
+    flex-direction: column;
+    /* Coloca los div en columna */
+    gap: 10px;
+    /* Espacio entre saldo y apuesta */
 }
 
 /* Alineación horizontal de los elementos dentro de cada div */
-.saldo, .apuesta {
+.saldo,
+.apuesta {
     display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre cada elemento interno */
+    gap: 5px;
+    /* Espacio entre cada elemento interno */
 }
 
 /* Contenedor de botones para apuesta y girar */
 .girar-subir-bajar-apuesta {
     display: flex;
     align-items: center;
-    gap: 6px; /* Menor espacio entre botones */
+    gap: 6px;
+    /* Menor espacio entre botones */
 }
 
 /* Botón circular de girar, con tamaño adaptable */
@@ -343,32 +378,42 @@ button:hover {
 .girar-subir-bajar-apuesta #girarBtn.large {
     --girar-size: 65px;
 }
+
 /*----------------------------------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------------------------------*/
 /* ESTILOS GENERALES PARA LOS MODALES*/
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     position: fixed;
-    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    z-index: 1000;
+    /* Asegurarse de que esté por encima de otros elementos */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo oscuro con opacidad */
 }
 
 /* Contenido del modal */
 .modal-content {
-    background-color: #fff; /* Fondo blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    margin: 15% auto; /* Centrado en la pantalla */
+    background-color: #fff;
+    /* Fondo blanco */
+    border-radius: 15px;
+    /* Bordes redondeados */
+    margin: 15% auto;
+    /* Centrado en la pantalla */
     padding: 20px;
-    border: 2px solid #4CAF50; /* Bordes verdes */
+    border: 2px solid #4CAF50;
+    /* Bordes verdes */
     width: 80%;
     max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil */
-    animation: slideIn 0.5s; /* Animación al abrir */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra sutil */
+    animation: slideIn 0.5s;
+    /* Animación al abrir */
 }
 
 /*-------------------------------------------------------------------------------------------*/
@@ -378,20 +423,24 @@ button:hover {
     0% {
         transform: translateY();
     }
+
     100% {
         transform: translateY(100%);
     }
 }
+
 /* Cuando .animando esté activo, aplica el efecto de desplazamiento */
 .celda.animando img {
     animation: spin 0.2s linear infinite;
-    
+
 }
+
 /*-------------------------------------------------------------------------------------------*/
 
 /* Estilo del botón de cerrar */
 .close {
-    color: #aaa; /* Color de la "X" */
+    color: #aaa;
+    /* Color de la "X" */
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -400,84 +449,113 @@ button:hover {
 
 .close:hover,
 .close:focus {
-    color: #4CAF50; /* Color verde al pasar el ratón */
+    color: #4CAF50;
+    /* Color verde al pasar el ratón */
     text-decoration: none;
 }
 
 /* Estilos del formulario */
 h2 {
-    color: #4CAF50; /* Color verde */
+    color: #4CAF50;
+    /* Color verde */
     text-align: center;
 }
 
 label {
     display: block;
-    margin: 5px 0; /* Margen reducido */
-    font-size: 1em; /* Tamaño de fuente más pequeño */
-    text-align: center; /* Centrando el texto */
+    margin: 5px 0;
+    /* Margen reducido */
+    font-size: 1em;
+    /* Tamaño de fuente más pequeño */
+    text-align: center;
+    /* Centrando el texto */
 }
 
 input[type="number"] {
-    width: 60%; /* Ancho reducido */
-    padding: 8px; /* Relleno reducido */
-    margin: 10px auto; /* Margen reducido y centrado */
-    font-size: 1em; /* Tamaño de fuente más pequeño */
-    border: 2px solid #4CAF50; /* Bordes verdes */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: border 0.3s; /* Transición suave */
-    display: block; /* Centrar el input */
+    width: 60%;
+    /* Ancho reducido */
+    padding: 8px;
+    /* Relleno reducido */
+    margin: 10px auto;
+    /* Margen reducido y centrado */
+    font-size: 1em;
+    /* Tamaño de fuente más pequeño */
+    border: 2px solid #4CAF50;
+    /* Bordes verdes */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    transition: border 0.3s;
+    /* Transición suave */
+    display: block;
+    /* Centrar el input */
 }
 
 input[type="number"]:focus {
-    border-color: #45a049; /* Color de borde al enfocar */
-    outline: none; /* Quitar el contorno por defecto */
+    border-color: #45a049;
+    /* Color de borde al enfocar */
+    outline: none;
+    /* Quitar el contorno por defecto */
 }
 
 /* Estilo del botón de confirmar */
 #confirmarDeposito,
 #confirmarRetiro {
-    background-color: #4CAF50; /* Color verde */
+    background-color: #4CAF50;
+    /* Color verde */
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1.1em; /* Tamaño de la fuente */
-    transition: background-color 0.3s; /* Transición suave */
-    display: block; /* Centrar el botón */
-    margin: 0 auto; /* Centro automático */
+    font-size: 1.1em;
+    /* Tamaño de la fuente */
+    transition: background-color 0.3s;
+    /* Transición suave */
+    display: block;
+    /* Centrar el botón */
+    margin: 0 auto;
+    /* Centro automático */
 }
 
 #confirmarDeposito:hover,
 #confirmarRetiro:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+    background-color: #45a049;
+    /* Color más oscuro al pasar el ratón */
 }
 
 
 /* Modal específico para retirar */
 #retiroModal .modal-content {
-    background-color: #ffdddd; /* Fondo rojo claro */
-    border: 2px solid #ff0000; /* Borde rojo */
-    color: #b30000; /* Color de texto oscuro */
+    background-color: #ffdddd;
+    /* Fondo rojo claro */
+    border: 2px solid #ff0000;
+    /* Borde rojo */
+    color: #b30000;
+    /* Color de texto oscuro */
 }
 
 /* Estilo del botón de confirmar para el modal de retiro */
 #confirmarRetiro {
-    background-color: #ff0000; /* Color rojo */
+    background-color: #ff0000;
+    /* Color rojo */
 }
 
 #confirmarRetiro:hover {
-    background-color: #cc0000; /* Color rojo más oscuro al pasar el ratón */
+    background-color: #cc0000;
+    /* Color rojo más oscuro al pasar el ratón */
 }
 
 /* Estilos de los encabezados y etiquetas en el modal de retiro */
 #retiroModal h2 {
-    color: #ff0000; /* Color rojo */
+    color: #ff0000;
+    /* Color rojo */
 }
 
 #retiroModal label {
-    color: #b30000; /* Color de texto oscuro para etiquetas */
+    color: #b30000;
+    /* Color de texto oscuro para etiquetas */
 }
+
 /*-------------------------------------------------------------------------------------------*/
 
 /* Estilo para el mensaje de saldo insuficiente en el botón "Girar" */
@@ -503,10 +581,12 @@ input[type="number"]:focus {
 
 #mensajeGanador {
     font-size: 1.2em;
-    color: #FFD700; /* Color dorado */
+    color: #FFD700;
+    /* Color dorado */
     text-align: center;
     margin-bottom: 10px;
-    display: none; /* Se controla en JavaScript */
+    display: none;
+    /* Se controla en JavaScript */
 }
 
 /* Estilo general para el boton, cambiar idioma*/
@@ -552,7 +632,8 @@ input[type="number"]:focus {
     top: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #ff4d4d; /* Rojo claro para mensajes de error */
+    background-color: #ff4d4d;
+    /* Rojo claro para mensajes de error */
     color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -561,19 +642,22 @@ input[type="number"]:focus {
     display: none;
     z-index: 3000;
 }
+
 .mensaje.mostrar {
     display: block;
     opacity: 1;
 }
 
-    /*Imagenes de las celdas.*/
-.celda img, .combinaciones ul li img {
-    width: 30px; /* ajusta el tamaño según lo necesario */
+/*Imagenes de las celdas.*/
+.celda img,
+.combinaciones ul li img {
+    width: 30px;
+    /* ajusta el tamaño según lo necesario */
 }
 
 
 /*---------------------------------------------------------------------------------------------*/
-        /*Estilos para la informacion de convinaciones*/
+/*Estilos para la informacion de convinaciones*/
 /*Estilos para el boton de informacion*/
 .info-button {
     font-size: 20px;
@@ -613,7 +697,8 @@ input[type="number"]:focus {
     max-width: 600px;
     padding: 20px;
     z-index: 1000;
-    display: none; /* Para ocultarlo inicialmente */
+    display: none;
+    /* Para ocultarlo inicialmente */
 }
 
 /* Estilo para la 'X' de cierre */
@@ -628,7 +713,8 @@ input[type="number"]:focus {
 }
 
 .close-info:hover {
-    color: #ff0000; /* Rojo al pasar el ratón */
+    color: #ff0000;
+    /* Rojo al pasar el ratón */
 }
 
 /* Estilos para el título */
@@ -655,7 +741,7 @@ input[type="number"]:focus {
     margin: 10px 0;
     border-bottom: 1px solid #ccc;
     font-size: 16px;
-    
+
 }
 
 /* Estilo para las imágenes dentro de la lista */
@@ -673,7 +759,8 @@ input[type="number"]:focus {
 
 /* Estilos para la modal cuando esté visible */
 .modal-info.show {
-    display: block; /* Se muestra cuando se añade la clase 'show' */
+    display: block;
+    /* Se muestra cuando se añade la clase 'show' */
 }
 
 /* Fondo oscuro para el resto de la pantalla cuando el modal está visible */
@@ -685,8 +772,10 @@ input[type="number"]:focus {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1; /* Detrás del modal */
+    z-index: -1;
+    /* Detrás del modal */
 }
+
 /*-------------------------------------------------------------------------------------*/
 
 /*ESTILOS PARA EL MODAL DE DAR PREMIO*/
@@ -718,7 +807,8 @@ input[type="number"]:focus {
     font-weight: bold;
 }
 
-.close-premio:hover, .close-premio:focus {
+.close-premio:hover,
+.close-premio:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -757,7 +847,7 @@ input[type="number"]:focus {
     background-color: #e6c300;
 }
 
-.tiradas{
+.tiradas {
     margin-left: 20px;
     color: #e6c300;
     font-weight: bold;
@@ -774,20 +864,22 @@ input[type="number"]:focus {
 
 /* Estilos básicos para los modales */
 .modal-jackpot {
-    display: none;  /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);  /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente */
     padding-top: 60px;
     overflow: auto;
-  }
-  
-  /* Contenido del modal */
-  .modal-jackpot-content {
+}
+
+/* Contenido del modal */
+.modal-jackpot-content {
     background-color: white;
     margin: 5% auto;
     padding: 20px;
@@ -795,17 +887,18 @@ input[type="number"]:focus {
     width: 80%;
     max-width: 400px;
     text-align: center;
-  }
+}
 
-  .cerrar-saldo-jackpot {
+.cerrar-saldo-jackpot {
     color: black;
-  }
+}
 
-  /* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
 
-  /* Estilo para el modal */
-  .modal-1 {
-    display: none; /* Oculto por defecto */
+/* Estilo para el modal para la apuesta maxima.*/
+.modal-1 {
+    display: none;
+    /* Oculto por defecto */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -813,7 +906,8 @@ input[type="number"]:focus {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semitransparente */
 }
 
 .modal-ApuestaMaxima {
@@ -841,4 +935,3 @@ input[type="number"]:focus {
     color: #000;
     text-decoration: none;
 }
-
