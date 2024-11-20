@@ -22,7 +22,6 @@ header {
     max-width: 97%;
     position: relative;
     padding: 0 20px;
-    /* Espaciado interno */
 
 }
 
@@ -60,61 +59,44 @@ header {
 /*----------------------------------------------------------------------------------------------------*/
 /*BOTONES PARA RETIRAR Y DEPOSITAR.*/
 .botones {
-    display: flex;
-    /* Alinea los botones en una fila */
-    margin-left: 80%;
-    /* Empuja los botones hacia la derecha */
+    display: flex; /* Alinea los botones en una fila */
+    margin-left: 80%; /* Empuja los botones hacia la derecha */
     position: absolute;
 }
 
 .botones .btn {
-    padding: 5px 10px;
-    /* Reducimos el espaciado interno */
-    margin: 5px;
-    /* Espacio entre los botones */
-    border: none;
-    /* Sin borde */
+    padding: 5px 10px; /* Reducimos el espaciado interno */
+    margin: 5px; /* Espacio entre los botones */
+    border: none; /* Sin borde */
     border-radius: 5px;
-    /* Bordes redondeados */
-    cursor: pointer;
-    /* Cambia el cursor al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
     font-size: 14px;
-    /* Tamaño de fuente más pequeño */
 }
 
 .depositar {
     background-color: #4CAF50;
-    /* Color de fondo verde */
     color: white;
-    /* Color de texto blanco */
 }
 
 .retirar {
     background-color: #f44336;
-    /* Color de fondo rojo */
     color: white;
-    /* Color de texto blanco */
 }
 
 .depositar:hover {
     background-color: #45a049;
-    /* Color más oscuro al pasar el mouse */
 }
 
 .retirar:hover {
     background-color: #e53935;
-    /* Color más oscuro al pasar el mouse */
 }
 
 /*----------------------------------------------------------------------------------------------------*/
 /* Reloj */
 .reloj {
     margin-left: 40px;
-    /* Espacio entre el título y el reloj */
     font-size: 25px;
-    /* Tamaño de la fuente del reloj */
     font-weight: lighter;
-    /* Peso de la fuente del reloj */
     color: rgba(255, 255, 1, 0.8);
 }
 
@@ -122,37 +104,28 @@ header {
 /*MENSAJE: JUEGA CON RESPONSABILIDAD +18*/
 marquee {
     position: absolute;
-    /* Posiciona el marquee de manera absoluta dentro del header */
     bottom: 0;
-    /* Coloca el marquee en la parte inferior del header */
     width: 97%;
-    /* Asegura que ocupe todo el ancho del header */
     text-align: center;
-    /* Centra el texto dentro del marquee */
     font-size: 14px;
     color: white;
 }
 
 /*----------------------------------------------------------------------------------------------------*/
-
 /* Contenedor principal para organizar el tablero de combinaciones y el tablero de tragaperras */
 .tragaperras-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 95%;
-    /* Ajustar el ancho */
     height: 60%;
-    /* Ocupa el 80% de la altura de la ventana */
-    max-height: 80vh;
-    /* Limitar el alto máximo */
+    max-height: 80%;
     box-sizing: border-box;
     padding: 10px;
 
 }
 
 /*----------------------------------------------------------------------------------------------------*/
-
 /* Tablero de combinaciones */
 .combinaciones {
     width: 20%;
@@ -174,7 +147,6 @@ marquee {
     font-size: 18px;
     margin-bottom: 5px;
     color: #ffd700;
-    /* Color dorado para el título */
 }
 
 .combinaciones ul {
@@ -191,7 +163,6 @@ marquee {
 }
 
 /*----------------------------------------------------------------------------------------------------*/
-
 /* Estilos para el tablero de 3x3 */
 .tableroSlot {
     display: grid;
@@ -201,6 +172,7 @@ marquee {
     width: 60%;
     height: 100%;
     background-image: url("../assets/Fondo-Celdas-2.png");
+    background-size: contain;
     border-radius: 20px;
     padding: 25px;
     box-sizing: border-box;
@@ -211,11 +183,10 @@ marquee {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    background-color: #222;
-    color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 8px 20px rgb(35, 103, 163);
+    background-image: url("../assets/desktop-wallpaper-black-ice.jpg");
+
 }
 
 
@@ -238,10 +209,6 @@ marquee {
 }
 
 /*----------------------------------------------------------------------------------------------------*/
-
-
-
-/*----------------------------------------------------------------------------------------------------*/
 /*Contenedor de la información del tablero*/
 .info-tablero {
     display: flex;
@@ -258,13 +225,11 @@ marquee {
 }
 
 /*----------------------------------------------------------------------------------------------------*/
-
 /* Agrupación del volumen y saldo */
 .volumen-saldo {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Menor espacio entre el ícono y el texto */
 }
 
 /* Ícono de volumen */
@@ -274,13 +239,11 @@ marquee {
     color: #ffffff;
 }
 
-
 /*----------------------------------------------------------------------------------------------------*/
 /* Modo Blanco y Negro */
 body.blancoNegro {
     filter: grayscale(100%);
     background-image: url('assets/Fondo-Body.jpg');
-
 }
 
 /* Estilos para el botón */
@@ -311,14 +274,11 @@ button:hover {
 }
 
 /*----------------------------------------------------------------------------------------------------*/
-
 /* Contenedor para organizar saldo arriba de apuesta */
 .container {
     display: flex;
     flex-direction: column;
-    /* Coloca los div en columna */
     gap: 10px;
-    /* Espacio entre saldo y apuesta */
 }
 
 /* Alineación horizontal de los elementos dentro de cada div */
@@ -327,7 +287,6 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 5px;
-    /* Espacio entre cada elemento interno */
 }
 
 /* Contenedor de botones para apuesta y girar */
@@ -335,7 +294,6 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 6px;
-    /* Menor espacio entre botones */
 }
 
 /* Botón circular de girar, con tamaño adaptable */
@@ -380,8 +338,6 @@ button:hover {
 .girar-subir-bajar-apuesta #girarBtn.large {
     --girar-size: 65px;
 }
-
-/*----------------------------------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------------------------------*/
 /* ESTILOS GENERALES PARA LOS MODALES*/
@@ -817,7 +773,8 @@ input[type="number"]:focus {
 }
 
 .celda.ganadora {
-    border: 2px solid green;
+    border: 5px solid green;
+    z-index: 1000;
 }
 
 /*------------------------------------------------------------------------------------------*/
