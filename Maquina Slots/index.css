@@ -13,7 +13,8 @@ body {
 
 /* Estilo para el header */
 header {
-    background-color: rgba(3, 3, 3, 0.5);
+    background-color: #222;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     width: 99%;
@@ -44,6 +45,7 @@ header {
 /*ESTILO PARA EL LOGO*/
 .logo img {
     width: 80px;
+    border-radius: 50%;
     /* Ajusta el tamaño del logo */
     height: auto;
     /* Efecto de sombra LED */
@@ -163,7 +165,7 @@ marquee {
     color: #fff;
     padding: 5px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgb(255, 0, 191);
+    box-shadow: 0 4px 18px rgb(28, 6, 22);
     text-align: center;
 
 }
@@ -195,14 +197,14 @@ marquee {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
     width: 60%;
     height: 100%;
-    background-color: #333;
+    background-image: url("../assets/Fondo-Celdas-2.png");
     border-radius: 20px;
     padding: 25px;
     box-sizing: border-box;
-    box-shadow: 0 4px 18px rgb(255, 0, 191);
+    box-shadow: 0 4px 18px rgb(28, 6, 22);
 }
 
 .celda {

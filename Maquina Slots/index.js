@@ -158,9 +158,13 @@ actualizarApuesta();
 /*--------------------------------------------------------------------------------------- */
 
 // Función del botón "Girar" con comprobación de saldo
+let giroActivo = false;
+
 girarBtn.addEventListener("click", function () {
+    if (giroActivo) return; // Evitar que se pueda pulsar mientras gira
+
     if (tiradas > 0) {
-        girarCeldas();
+        iniciarGiro();
         tiradas--;
         tiradasElemento.textContent = tiradas;
     } else if (saldo >= apuesta) {
@@ -172,8 +176,7 @@ girarBtn.addEventListener("click", function () {
         girarBtn.classList.remove("insufficient");
         girarBtn.removeAttribute("data-tooltip");
 
-        girarCeldas();
-
+        iniciarGiro();
     } else {
         // Saldo insuficiente: mostrar mensaje al hacer hover
         girarBtn.classList.add("insufficient");
@@ -181,6 +184,18 @@ girarBtn.addEventListener("click", function () {
     }
 });
 
+// Función para manejar el giro completo (inicia y finaliza)
+function iniciarGiro() {
+    giroActivo = true; // Bloquear el botón
+    girarBtn.disabled = true; // Opcional: deshabilitar visualmente el botón
+    girarCeldas();
+
+    // Reactivar el botón después de que termine el giro
+    setTimeout(() => {
+        giroActivo = false;
+        girarBtn.disabled = false; // Opcional: reactivar visualmente el botón
+    }, 2000); // Duración del giro (2 segundos)
+}
 
 // Función para hacer girar las celdas
 const simbolos = [
@@ -190,8 +205,6 @@ const simbolos = [
     "../assets/zeus-icono.png",
     "../assets/bufalo.png"
 ];
-
-let giroActivo = false;
 
 function girarCeldas() {
     const celdas = document.querySelectorAll(".celda");
@@ -218,7 +231,7 @@ function girarCeldas() {
             // Agregar la imagen a la celda
             celda.appendChild(img);
         });
-    }, 50); // Cambiar de símbolo cada 100ms para simular el giro
+    }, 50); // Cambiar de símbolo cada 50ms para simular el giro
 
     // Después de 2 segundos, detener la animación y mostrar los resultados finales
     setTimeout(function () {
@@ -232,6 +245,7 @@ function girarCeldas() {
 
 // Inicializar el saldo en pantalla (si tienes una función para ello)
 actualizarSaldo();
+
 
 
 /*--------------------------------------------------------------------------------------- */
@@ -359,7 +373,6 @@ document.querySelector('.close-info').addEventListener('click', function () {
 });
 
 /*------------------------------------------------------------------------------------------*/
-/*FUNCIONALIDAD PARA COMPROBAR LAS CELDAS Y QUE DE PREMIO*/
 // Elementos del modal de premio
 const premioModal = document.getElementById('premioModal');
 const premioMensaje = document.getElementById('premioMensaje');
