@@ -155,9 +155,6 @@ document.getElementById('bajarApuesta').addEventListener('click', function() {
 // Inicializa el display de la apuesta al cargar la página
 actualizarApuesta();
 
-
-
-
 /*--------------------------------------------------------------------------------------- */
 
     // Función del botón "Girar" con comprobación de saldo
