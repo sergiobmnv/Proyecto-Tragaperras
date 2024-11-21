@@ -157,9 +157,9 @@ actualizarApuesta();
 
 /*--------------------------------------------------------------------------------------- */
 
-// Función del botón "Girar" con comprobación de saldo
+// Variable para controlar si un giro está activo
 let giroActivo = false;
-
+// Evento del botón "Girar" con comprobación de saldo
 girarBtn.addEventListener("click", function () {
     if (giroActivo) return; // Evitar que se pueda pulsar mientras gira
 
@@ -181,6 +181,32 @@ girarBtn.addEventListener("click", function () {
         // Saldo insuficiente: mostrar mensaje al hacer hover
         girarBtn.classList.add("insufficient");
         girarBtn.setAttribute("data-tooltip", "Saldo insuficiente");
+    }
+});
+
+// Detectar la tecla Espacio para activar el giro
+document.addEventListener("keydown", function (event) {
+    if (event.code === "Space" && !giroActivo) {
+        event.preventDefault(); // Evita que la página haga scroll al presionar Espacio
+
+        if (tiradas > 0) {
+            iniciarGiro();
+            tiradas--;
+            tiradasElemento.textContent = tiradas;
+        } else if (saldo >= apuesta) {
+            // Saldo suficiente: Descontamos la apuesta y giramos
+            saldo -= apuesta;
+            actualizarSaldo();
+
+            // Quitamos el mensaje de saldo insuficiente
+            girarBtn.classList.remove("insufficient");
+            girarBtn.removeAttribute("data-tooltip");
+
+            iniciarGiro();
+        } else {
+            // Opcional: Notificar de saldo insuficiente al intentar girar con Espacio
+            console.log("Saldo insuficiente");
+        }
     }
 });
 
