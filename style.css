@@ -31,7 +31,7 @@ header {
     text-align: center;
     position: absolute;
     top: 5px;
-    left: 50%;
+    left: 65%;
     transform: translateX(-50%);
     font-size: 30px;
     font-family: cursive;
@@ -799,7 +799,7 @@ input[type="number"]:focus {
 }
 
 .jackpot button i {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .jackpot button:hover {
@@ -824,7 +824,6 @@ input[type="number"]:focus {
 /* Estilos básicos para los modales */
 .modal-jackpot {
     display: none;
-    /* Oculto por defecto */
     position: fixed;
     z-index: 1;
     left: 0;
