@@ -312,7 +312,6 @@ actualizarReloj(); // Inicializar el reloj
 setInterval(actualizarReloj, 1000); // Actualizar cada segundo
 
 /*--------------------------------------------------------------------------------------- */
-
 /* Evento Blanco y Negro */
 var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("click", function () {
     // Cambiar el fondo de la página (imagen)
@@ -672,6 +671,7 @@ function girarCeldas() {
 
         // Verifica la ganancia después de que el giro termine
         verificarGanancia();
+        actualizarSaldo();
     }, 2000);
 }
 
