@@ -301,7 +301,7 @@ window.addEventListener('click', (event) => {
 function mostrarMensaje(texto, color = '#ff4d4d') {
     const mensajeElemento = document.getElementById('mensaje');
     mensajeElemento.textContent = texto;
-    mensajeElemento.style.backgroundColor = color; // Cambia el color si es necesario
+    mensajeElemento.style.backgroundColor = color;
     mensajeElemento.classList.add('mostrar');
 
     // Ocultar el mensaje después de 3 segundos
