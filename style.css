@@ -48,7 +48,9 @@ header {
     /* Ajusta el tamaño del logo */
     height: auto;
     /* Efecto de sombra LED */
-    filter: drop-shadow(0 0 8px rgba(238, 255, 2, 0.8)) drop-shadow(0 0 15px rgba(255, 255, 1, 0.8)) drop-shadow(0 0 20px rgba(4, 0, 6, 0.8));
+    filter: drop-shadow(0 0 8px rgba(238, 255, 2, 0.8)) 
+            drop-shadow(0 0 15px rgba(255, 255, 1, 0.8)) 
+            drop-shadow(0 0 20px rgba(4, 0, 6, 0.8));
 }
 
 .logo {
@@ -140,7 +142,6 @@ marquee {
     border-radius: 15px;
     box-shadow: 0 4px 18px rgb(28, 6, 22);
     text-align: center;
-
 }
 
 .combinaciones h2 {
@@ -186,9 +187,7 @@ marquee {
     border-radius: 10px;
     box-shadow: inset 0 8px 20px rgb(35, 103, 163);
     background-image: url("../assets/desktop-wallpaper-black-ice.jpg");
-
 }
-
 
 /*----------------------------------------------------------------------------------------------------*/
 /* Estilos para el GIF */
@@ -200,7 +199,6 @@ marquee {
     justify-content: center;
     border-radius: 20px;
     overflow: hidden;
-
 }
 
 .gifZeus img {
@@ -430,88 +428,65 @@ label {
 }
 
 input[type="number"] {
-    width: 60%;
-    /* Ancho reducido */
-    padding: 8px;
-    /* Relleno reducido */
-    margin: 10px auto;
-    /* Margen reducido y centrado */
-    font-size: 1em;
-    /* Tamaño de fuente más pequeño */
-    border: 2px solid #4CAF50;
-    /* Bordes verdes */
-    border-radius: 5px;
-    /* Bordes redondeados */
-    transition: border 0.3s;
-    /* Transición suave */
-    display: block;
-    /* Centrar el input */
+    width: 60%; /* Ancho reducido */
+    padding: 8px; /* Relleno reducido */
+    margin: 10px auto; /* Margen reducido y centrado */
+    font-size: 1em; /* Tamaño de fuente más pequeño */
+    border: 2px solid #4CAF50; /* Bordes verdes */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border 0.3s; /* Transición suave */
+    display: block;  /* Centrar el input */
 }
 
 input[type="number"]:focus {
-    border-color: #45a049;
-    /* Color de borde al enfocar */
-    outline: none;
-    /* Quitar el contorno por defecto */
+    border-color: #45a049; /* Color de borde al enfocar */
+    outline: none; /* Quitar el contorno por defecto */
 }
 
 /* Estilo del botón de confirmar */
 #confirmarDeposito,
 #confirmarRetiro {
     background-color: #4CAF50;
-    /* Color verde */
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.1em;
-    /* Tamaño de la fuente */
     transition: background-color 0.3s;
-    /* Transición suave */
     display: block;
-    /* Centrar el botón */
     margin: 0 auto;
-    /* Centro automático */
 }
 
 #confirmarDeposito:hover,
 #confirmarRetiro:hover {
-    background-color: #45a049;
-    /* Color más oscuro al pasar el ratón */
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
 }
 
 
 /* Modal específico para retirar */
 #retiroModal .modal-content {
     background-color: #ffdddd;
-    /* Fondo rojo claro */
     border: 2px solid #ff0000;
-    /* Borde rojo */
     color: #b30000;
-    /* Color de texto oscuro */
 }
 
 /* Estilo del botón de confirmar para el modal de retiro */
 #confirmarRetiro {
     background-color: #ff0000;
-    /* Color rojo */
 }
 
 #confirmarRetiro:hover {
     background-color: #cc0000;
-    /* Color rojo más oscuro al pasar el ratón */
 }
 
 /* Estilos de los encabezados y etiquetas en el modal de retiro */
 #retiroModal h2 {
     color: #ff0000;
-    /* Color rojo */
 }
 
 #retiroModal label {
     color: #b30000;
-    /* Color de texto oscuro para etiquetas */
 }
 
 /*-------------------------------------------------------------------------------------------*/
