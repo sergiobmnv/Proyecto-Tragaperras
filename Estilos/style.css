@@ -522,43 +522,6 @@ input[type="number"]:focus {
     /* Se controla en JavaScript */
 }
 
-/* Estilo general para el boton, cambiar idioma*/
-/* Estilo general del contenedor */
-.cambiar-idioma {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-/* Estilo del botón */
-#evento {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Estilo de la bandera (span) */
-.bandera {
-    width: 25px;
-    height: 15px;
-    display: inline-block;
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Estilo de la bandera inglesa cuando se activa */
-.bandera-inglesa {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg');
-}
-
 /* Estilos para el mensaje de retirar dinero */
 .mensaje {
     position: fixed;
@@ -584,7 +547,7 @@ input[type="number"]:focus {
 /*Imagenes de las celdas.*/
 .celda img,
 .combinaciones ul li img {
-    width: 30px;
+    width: 37px;
     /* ajusta el tamaño según lo necesario */
 }
 
@@ -827,7 +790,6 @@ input[type="number"]:focus {
 
 
 /* -----------------------------------------------------------------------------------------*/
-
 /* Estilo para el modal para la apuesta maxima.*/
 .modal-1 {
     display: none;

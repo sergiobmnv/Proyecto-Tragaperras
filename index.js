@@ -24,6 +24,7 @@ const premioModal = document.getElementById('premioModal');
 const premioMensaje = document.getElementById('premioMensaje');
 const closePremioBtn = document.querySelector('.close-premio');
 
+/*------------------------------------------------------------------------------------*/
 // Función para actualizar el saldo en pantalla
 function actualizarSaldo() {
     saldoElemento.textContent = saldo;
