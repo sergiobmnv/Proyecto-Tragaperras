@@ -22,10 +22,10 @@ var blancoNegro = document.getElementById("botonBlancoNegro").addEventListener("
     let icono = document.getElementById('iconoModo');
 
     if (document.body.classList.contains('blancoNegro')) {
-        icono.classList.remove('fas', 'fa-sun');
-        icono.classList.add('fas', 'fa-moon');
-    } else {
         icono.classList.remove('fas', 'fa-moon');
         icono.classList.add('fas', 'fa-sun');
+    } else {
+        icono.classList.remove('fas', 'fa-sun');
+        icono.classList.add('fas', 'fa-moon');
     }
 });
