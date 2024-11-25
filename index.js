@@ -1,5 +1,3 @@
-
-// Variables de saldo y elementos del DOM
 let saldo = 0; // Saldo inicial
 let tiradas = 0;  // Tiradas iniciales
 
@@ -100,7 +98,6 @@ confirmarRetiroBtn.addEventListener('click', () => {
 actualizarSaldo();
 
 /*--------------------------------------------------------------------------------------- */
-
 
 let apuesta = 20; // Apuesta inicial
 const MAX_APUESTA = 200; // Límite máximo de apuesta
