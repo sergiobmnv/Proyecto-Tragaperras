@@ -1,0 +1,155 @@
+/* ====== ESTILOS GENERALES PARA LOS MODALES ====== */
+.modal-jackpot {
+    display: none; /* Ocultos por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(5px); /* Desenfoque para dar enfoque */
+}
+
+/* Contenedor de contenido del modal */
+.modal-jackpot-content {
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Modal para saldo suficiente */
+#modal-saldo-suficiente .modal-jackpot-content {
+    background: radial-gradient(circle, #003300, #001a00); /* Verde oscuro */
+    color: #00ff7f; /* Verde neón */
+    border: 2px solid #00ff7f; /* Borde verde brillante */
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.5);
+}
+
+/* Modal para saldo insuficiente */
+#modal-saldo-insuficiente .modal-jackpot-content {
+    background: radial-gradient(circle, #330000, #1a0000); /* Rojo oscuro */
+    color: #ff4500; /* Rojo brillante */
+    border: 2px solid #ff4500; /* Borde rojo brillante */
+    box-shadow: 0 8px 16px rgba(255, 69, 0, 0.5);
+}
+
+/* Títulos de los modales */
+.modal-jackpot-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Texto descriptivo */
+.modal-jackpot-content p {
+    font-size: 16px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+/* Saldo actualizado */
+#saldo-actualizado {
+    font-weight: bold;
+    color: #ffd700; /* Dorado para destacar */
+}
+
+/* Botones de acción en los modales */
+.modal-jackpot-content button {
+    background-color: currentColor; /* Hereda el color principal */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+#modal-saldo-suficiente button:hover {
+    background-color: #00cc66; /* Verde más oscuro */
+    box-shadow: 0 4px 10px rgba(0, 204, 102, 0.5);
+}
+
+#modal-saldo-insuficiente button:hover {
+    background-color: #cc3300; /* Rojo más oscuro */
+    box-shadow: 0 4px 10px rgba(204, 51, 0, 0.5);
+}
+
+/* ====== ESTILOS DEL BOTÓN Y LAS TIRADAS ====== */
+/* Contenedor principal del jackpot */
+.jackpot {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Botón de compra de bonos */
+#jackpotBtn {
+    margin-left: 50px;
+    background: radial-gradient(circle, #111, #003300); /* Fondo verde oscuro con brillo */
+    color: #00ff7f; /* Verde neón */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    border: 2px solid #00ff7f; /* Borde verde brillante */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.3); /* Sombra suave */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19px; /* Espaciado entre el ícono y el texto */
+
+}
+
+/* Efectos al pasar el cursor sobre el botón */
+#jackpotBtn:hover {
+    background: radial-gradient(circle, #003300, #001a00); /* Fondo más oscuro */
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.5); /* Aumenta la sombra */
+}
+
+/* Ícono dentro del botón */
+#jackpotBtn i {
+    font-size: 22px;
+    color: #ffd700; /* Dorado para el ícono */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#jackpotBtn:hover i {
+    transform: rotate(20deg); /* Gira ligeramente el ícono */
+    color: #00ff7f; /* Ícono cambia a verde al hover */
+}
+
+/* Contenedor de tiradas */
+.tiradas {
+    
+    text-align: center;
+    font-size: 20px;
+    margin-top: 7px;
+    font-family: 'Arial', sans-serif;
+    margin-left: 15px;
+}
+
+/* Texto de tiradas */
+.tiradas strong {
+    font-size: 14px;
+    color: #ffd700; /* Dorado para destacar */
+    margin-right: 5px;
+}
+
+.tiradas span {
+    font-size: 14px;
+    color: #fff; /* Blanco para complementar */
+}

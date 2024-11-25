@@ -5,11 +5,16 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Flosky Slots</title>
+
     <link rel="icon" href="../assets/Favicon.png" type="image/png">
     <link rel='stylesheet' type='text/css' media='screen' href='Estilos/style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='Estilos/cambiarIdioma.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='Estilos/modalApuestaMaxima.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Estilos/bonos.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Estilos/depositar-retirar.css'>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <script src="https://unpkg.com/i18next@latest/i18next.min.js"></script>
 </head>
 
@@ -32,7 +37,7 @@
     </div>
 
     <div class="tiradas">
-        <strong id="tiradasJackpot"> </strong><span id="tiradas"></span>
+        <strong id="tiradasJackpot"></strong><span id="tiradas"></span>
     </div>
 
     <div class="botones">
@@ -217,8 +222,8 @@
     </div>
 
     <!-- Ingresar -->
-    <div id="depositoModal" class="modal">
-        <div class="modal-content">
+    <div id="depositoModal" class="modal-depositar">
+        <div class="modal-content-depositar">
             <span class="close">&times;</span>
             <h2>Depósito</h2>
             <label for="cantidadDeposito">Ingresa la cantidad a depositar:</label>
@@ -228,8 +233,8 @@
     </div>
 
     <!-- Retirar -->
-    <div id="retiroModal" class="modal">
-        <div class="modal-content">
+    <div id="retiroModal" class="modal-retiro">
+        <div class="modal-content-retiro">
             <span class="close-retirar">&times;</span>
             <h2>Retiro</h2>
             <label for="cantidadRetiro">Ingresa la cantidad a retirar:</label>
@@ -259,7 +264,7 @@
     <!-- Modal para saldo insuficiente -->
     <div id="modal-saldo-insuficiente" class="modal-jackpot">
         <div class="modal-jackpot-content">
-            <h2>No tienes suficiente saldo para jugar al Jackpot.</h2>
+            <h2>No tienes suficiente saldo para comprar bonos.</h2>
             <button id="cerrar-saldo-insuficiente">Cerrar</button>
         </div>
     </div>

@@ -26,7 +26,7 @@ header {
 }
 
 .titulo .p1 {
-    color: #ffd700;
+    color: #00ff7f;
     font-weight: bold;
     text-align: center;
     position: absolute;
@@ -35,9 +35,8 @@ header {
     transform: translateX(-50%);
     font-size: 30px;
     font-family: cursive;
-    text-shadow: 2px 2px 4px rgba(10, 10, 10, 0.8),
-        -2px -2px 2px rgba(10, 10, 10, 0.8),
-        2px -2px 2px rgba(238, 255, 0, 0.8);
+    box-shadow: 5 2px 16px rgba(0, 255, 127, 0.3);
+    
 }
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -47,10 +46,10 @@ header {
     border-radius: 50%;
     /* Ajusta el tamaño del logo */
     height: auto;
-    /* Efecto de sombra LED */
-    filter: drop-shadow(0 0 8px rgba(238, 255, 2, 0.8)) 
-            drop-shadow(0 0 15px rgba(255, 255, 1, 0.8)) 
-            drop-shadow(0 0 20px rgba(4, 0, 6, 0.8));
+    color: #00ff7f;
+    border: 2px solid #00ff7f;
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.5);
 }
 
 .logo {
@@ -99,7 +98,11 @@ header {
     margin-left: 40px;
     font-size: 25px;
     font-weight: lighter;
-    color: rgba(255, 255, 1, 0.8);
+    color: #00ff7f;
+    border: 2px solid #00ff7f;
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.5);
+    padding: 10px;
 }
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -393,104 +396,6 @@ button:hover {
 
 /*-------------------------------------------------------------------------------------------*/
 
-/* Estilo del botón de cerrar */
-.close {
-    color: #aaa;
-    /* Color de la "X" */
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #4CAF50;
-    /* Color verde al pasar el ratón */
-    text-decoration: none;
-}
-
-/* Estilos del formulario */
-h2 {
-    color: #4CAF50;
-    /* Color verde */
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin: 5px 0;
-    /* Margen reducido */
-    font-size: 1em;
-    /* Tamaño de fuente más pequeño */
-    text-align: center;
-    /* Centrando el texto */
-}
-
-input[type="number"] {
-    width: 60%; /* Ancho reducido */
-    padding: 8px; /* Relleno reducido */
-    margin: 10px auto; /* Margen reducido y centrado */
-    font-size: 1em; /* Tamaño de fuente más pequeño */
-    border: 2px solid #4CAF50; /* Bordes verdes */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: border 0.3s; /* Transición suave */
-    display: block;  /* Centrar el input */
-}
-
-input[type="number"]:focus {
-    border-color: #45a049; /* Color de borde al enfocar */
-    outline: none; /* Quitar el contorno por defecto */
-}
-
-/* Estilo del botón de confirmar */
-#confirmarDeposito,
-#confirmarRetiro {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-    display: block;
-    margin: 0 auto;
-}
-
-#confirmarDeposito:hover,
-#confirmarRetiro:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el ratón */
-}
-
-
-/* Modal específico para retirar */
-#retiroModal .modal-content {
-    background-color: #ffdddd;
-    border: 2px solid #ff0000;
-    color: #b30000;
-}
-
-/* Estilo del botón de confirmar para el modal de retiro */
-#confirmarRetiro {
-    background-color: #ff0000;
-}
-
-#confirmarRetiro:hover {
-    background-color: #cc0000;
-}
-
-/* Estilos de los encabezados y etiquetas en el modal de retiro */
-#retiroModal h2 {
-    color: #ff0000;
-}
-
-#retiroModal label {
-    color: #b30000;
-}
-
-/*-------------------------------------------------------------------------------------------*/
-
 /* Estilo para el mensaje de saldo insuficiente en el botón "Girar" */
 #girarBtn[data-tooltip]:hover::after {
     content: attr(data-tooltip);
@@ -715,118 +620,7 @@ input[type="number"]:focus {
     z-index: 1000;
 }
 
-/*------------------------------------------------------------------------------------------*/
-
-/* Estilos básicos para los modales */
-.modal-jackpot {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Fondo semitransparente */
-    padding-top: 60px;
-    overflow: auto;
-}
-
-/* Contenido del modal */
-.modal-jackpot-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.cerrar-saldo-jackpot {
-    color: black;
-}
-
-/* Estilos del botón de Jackpot */
-.jackpot {
-    display: inline-block;
-    margin-left: 40px;
-}
-
-.jackpot button {
-    background-color: #ffd700;
-    color: #333;
-    font-weight: bold;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.jackpot button i {
-    font-size: 22px;
-}
-
-.jackpot button:hover {
-    background-color: #e6c300;
-}
-
-.tiradas {
-    margin-left: 20px;
-    color: #e6c300;
-    font-weight: bold;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-}
 
 
-/* -----------------------------------------------------------------------------------------*/
-/* Estilo para el modal para la apuesta maxima.*/
-.modal-1 {
-    display: none;
-    /* Oculto por defecto */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Fondo semitransparente */
-}
 
-.modal-ApuestaMaxima {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-.cerrarApuestaMaxima {
-    color: #aaa;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.cerrarApuestaMaxima:hover,
-.cerrarApuestaMaxima:focus {
-    color: #000;
-    text-decoration: none;
-}
