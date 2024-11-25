@@ -19,6 +19,11 @@ const confirmarRetiroBtn = document.getElementById('confirmarRetiro');
 const cantidadRetiroInput = document.getElementById('cantidadRetiro');
 const closeRetirarModalBtn = document.querySelector('.close-retirar');
 
+// Elementos del modal de premio
+const premioModal = document.getElementById('premioModal');
+const premioMensaje = document.getElementById('premioMensaje');
+const closePremioBtn = document.querySelector('.close-premio');
+
 // Función para actualizar el saldo en pantalla
 function actualizarSaldo() {
     saldoElemento.textContent = saldo;
@@ -269,6 +274,7 @@ function girarCeldas() {
 // Inicializar el saldo en pantalla (si tienes una función para ello)
 actualizarSaldo();
 
+
 /*--------------------------------------------------------------------------------------- */
 /*Funcion para mostrar el modal de la informacion de las conbinaciones*/
 // Selección de elementos
@@ -317,11 +323,7 @@ document.querySelector('.close-info').addEventListener('click', function () {
     document.querySelector('.modal-info').classList.remove('show');
 });
 
-/*------------------------------------------------------------------------------------------*/
-// Elementos del modal de premio
-const premioModal = document.getElementById('premioModal');
-const premioMensaje = document.getElementById('premioMensaje');
-const closePremioBtn = document.querySelector('.close-premio');
+
 /*-------------------------------------------------------------------------------------------*/
 
 // Evento para el botón de Jackpot
@@ -341,6 +343,7 @@ jackpotBtn.addEventListener('click', () => {
         const modalSaldoSuficiente = document.getElementById('modal-saldo-suficiente');
         saldoActualizado.textContent = saldo; // Mostrar saldo actualizado en el modal
         modalSaldoSuficiente.style.display = 'block';
+
     } else {
         // Mostrar el modal de saldo insuficiente
         const modalSaldoInsuficiente = document.getElementById('modal-saldo-insuficiente');

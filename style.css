@@ -748,7 +748,7 @@ input[type="number"]:focus {
 }
 
 .celda.ganadora {
-    filter: drop-shadow(0 0 8px rgba(0, 241, 16, 0.874));
+    filter: drop-shadow(0 0 8px  #ffd700);
     z-index: 1000;
 }
 
